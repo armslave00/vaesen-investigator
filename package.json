@@ -1,0 +1,10 @@
+{
+  "name": "vaesen-web-card",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve-web.mjs",
+    "build": "node scripts/build-web.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}

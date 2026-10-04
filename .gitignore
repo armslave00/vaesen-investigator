@@ -18,3 +18,7 @@ venv/
 
 # Office temporary lock files
 ~$*
+
+# Generated web output and isolated Sites publication checkout
+web/dist/
+.sites-runtime/

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#152d2a">
+  <meta name="description" content="北欧奇谭调查员自动角色卡，复刻拂晓鵺啼 Excel v2.0 的数值与计算。">
+  <title>北欧奇谭 · 调查员档案</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">ᛉ</span><span>北欧奇谭<small>VAESEN · INVESTIGATOR ARCHIVE</small></span></a>
+    <div class="toolbar"><span id="save-status" role="status">仅保存于此浏览器</span><button type="button" id="export-card">导出档案</button><button type="button" id="import-card">导入档案</button><input id="import-file" type="file" accept="application/json,.json" hidden></div>
+  </header>
+  <div class="workspace">
+    <aside class="archive-sidebar">
+      <div class="archive-title"><span class="eyebrow">THE SOCIETY</span><h1>调查员档案</h1><span class="edition">自动角色卡 · v2.0</span></div>
+      <nav class="section-nav" aria-label="档案页签">
+        <button class="active" data-tab="card" aria-current="page"><span>01</span>角色卡</button>
+        <button data-tab="talents"><span>02</span>天赋表</button>
+        <button data-tab="assets"><span>03</span>资产表</button>
+        <button data-tab="mementos"><span>04</span>纪念物表</button>
+        <button data-tab="audit"><span>05</span>核验说明</button>
+      </nav>
+      <div class="sidebar-note"><span class="rune" aria-hidden="true">ᛟ</span><p>那些看见的人，<br>将记住未被记载的故事。</p></div>
+      <div class="source-credit">基于拂晓鵺啼 Excel 自动卡<br>原卡数值与公式保留</div>
+      <button class="quiet-button" id="reset-card">清空当前档案</button>
+    </aside>
+    <main id="main-content" tabindex="-1">
+      <div id="loading" role="status">正在打开调查员档案…</div>
+      <section id="card" class="tab-panel" hidden>
+        <div class="page-heading"><div><span class="eyebrow">INVESTIGATOR DOSSIER</span><h2 id="character-heading">新调查员</h2></div><span class="folio">档案 / 01</span></div>
+        <div class="identity-grid" id="identity-fields"></div>
+        <div class="summary-strip" id="summary"></div>
+        <div class="sheet-section"><div class="section-heading"><h3>属性与技能</h3><span>主要属性与技能以铜金标记</span></div><div class="attribute-grid" id="attribute-fields"></div></div>
+        <div class="sheet-section"><div class="section-heading"><h3>资源与资产</h3></div><div id="resource-fields" class="resource-grid"></div></div>
+        <div class="sheet-section"><div class="section-heading"><h3>天赋</h3><span>首项提供职业天赋，其余项可自由填写</span></div><div id="talent-fields"></div></div>
+        <div class="sheet-section"><div class="section-heading"><h3>装备</h3></div><p id="profession-equipment" class="equipment-note"></p><div id="equipment-fields"></div></div>
+        <div class="sheet-section"><div class="section-heading"><h3>状态与经验</h3><span>圆点分别记录，不自动扣减属性或技能</span></div><div id="condition-fields" class="condition-grid"></div><div id="experience-fields"></div></div>
+        <div class="sheet-section"><div class="section-heading"><h3>故事与关系</h3></div><div id="story-fields" class="story-grid"></div></div>
+        <div class="sheet-section"><div class="section-heading"><h3>人物背景与笔记</h3></div><div id="notes-fields" class="story-grid"></div></div>
+      </section>
+      <section id="talents" class="tab-panel" hidden></section>
+      <section id="assets" class="tab-panel" hidden></section>
+      <section id="mementos" class="tab-panel" hidden></section>
+      <section id="audit" class="tab-panel" hidden></section>
+      <footer>北欧奇谭 / VAESEN <span>拂晓鵺啼自动卡 v2.0 · 网页复刻</span></footer>
+    </main>
+  </div>
+  <div id="toast" role="status" hidden></div>
+  <dialog id="reset-dialog"><h2>清空当前档案？</h2><p>当前浏览器保存的角色信息将被清空。请先导出需要保留的档案。</p><div class="dialog-actions"><button id="cancel-reset">保留档案</button><button id="confirm-reset" class="danger-button">清空档案</button></div></dialog>
+</body>
+</html>
