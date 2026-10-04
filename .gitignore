@@ -22,3 +22,6 @@ venv/
 # Generated web output and isolated Sites publication checkout
 web/dist/
 .sites-runtime/
+node_modules/
+web/.generated/
+output/pdf/

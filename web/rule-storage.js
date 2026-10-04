@@ -8,7 +8,7 @@ const MAX_SHORT_TEXT = 2000;
 const MAX_NAME_TEXT = 200;
 const MAX_SOURCE_TEXT = 200000;
 const FORBIDDEN_KEYS = new Set(['__proto__', 'prototype', 'constructor']);
-const PROGRESS_KEYS = ['phase', 'xp', 'assets', 'extraTalents', 'ledger', 'session', 'creation', 'migrated'];
+const PROGRESS_KEYS = ['phase', 'xp', 'assets', 'extraTalents', 'ledger', 'session', 'creation'];
 const SNAPSHOT_KEYS = ['kind', 'validated', 'archetype', 'age', 'attributeBudget', 'skillBudget', 'attributes', 'skills', 'resourceBase', 'resourcePurchased', 'attributeRemaining', 'skillRemaining'];
 const ATTRIBUTE_KEYS = ['D20', 'I20', 'N20', 'S20'];
 const SKILL_KEYS = ['D21', 'D22', 'D23', 'I21', 'I22', 'I23', 'N21', 'N22', 'N23', 'S21', 'S22', 'S23'];
@@ -65,8 +65,8 @@ function nullableNumber(value, field) {
 function validateSnapshot(snapshot) {
   if (snapshot === null) return;
   record(snapshot, 'creation', SNAPSHOT_KEYS, SNAPSHOT_KEYS);
-  if (!['created', 'imported'].includes(snapshot.kind)) fail('creation.kind');
-  bool(snapshot.validated, 'creation.validated');
+  if (snapshot.kind !== 'created') fail('creation.kind');
+  if (snapshot.validated !== true) fail('creation.validated');
   if (snapshot.archetype !== null) text(snapshot.archetype, 'creation.archetype', MAX_NAME_TEXT);
   scalar(snapshot.age, 'creation.age');
   scalar(snapshot.resourcePurchased, 'creation.resourcePurchased');
@@ -84,7 +84,6 @@ export function validateRuleProgress(progress) {
   if (Object.hasOwn(progress, 'phase') && !['creation', 'play'].includes(progress.phase)) fail('phase');
   if (Object.hasOwn(progress, 'xp')) integer(progress.xp, 'xp', 0);
   if (Object.hasOwn(progress, 'assets') && progress.assets !== null) integer(progress.assets, 'assets', 0);
-  if (Object.hasOwn(progress, 'migrated')) bool(progress.migrated, 'migrated');
   if (Object.hasOwn(progress, 'extraTalents')) {
     list(progress.extraTalents, 'extraTalents', MAX_EXTRA_TALENTS);
     progress.extraTalents.forEach((name, index) => text(name, 'extraTalents.' + index, MAX_NAME_TEXT, true));
@@ -124,7 +123,7 @@ function normalized(progress) {
   return copy(result);
 }
 
-function legacyValues(workbook, values) {
+function validatedValues(workbook, values) {
   record(values, 'values');
   return parseCardData(createCardData(workbook, values), workbook);
 }
@@ -132,23 +131,22 @@ function legacyValues(workbook, values) {
 export function createRuleCardData(workbook, values, progress = {}) {
   return {
     format: CARD_FORMAT, version: RULE_CARD_VERSION, sourceSha256: workbook.source.sha256,
-    values: legacyValues(workbook, values), progress: normalized(progress),
+    values: validatedValues(workbook, values), progress: normalized(progress),
   };
 }
 
 export function parseRuleCardData(data, workbook) {
   record(data, 'archive', ['format', 'version', 'sourceSha256', 'values', 'progress']);
-  if (data.version === 1) {
-    if (Object.hasOwn(data, 'progress')) fail('archive.progress');
-    record(data.values, 'values');
-    const values = legacyValues(workbook, parseCardData(data, workbook));
-    const progress = normalized({ phase: 'creation', xp: 0, assets: null, extraTalents: [], ledger: [], session: { id: 1, settled: false }, creation: null, migrated: true });
-    return { values, progress, migrated: true };
-  }
   if (data.version !== RULE_CARD_VERSION || data.format !== CARD_FORMAT) throw new Error('请选择本网页导出的调查员档案');
   if (data.sourceSha256 !== workbook.source.sha256) throw new Error('档案对应的 Excel 版本不同，无法直接导入');
   if (!Object.hasOwn(data, 'progress')) throw new Error('档案缺少成长记录');
-  const values = legacyValues(workbook, data.values);
-  const progress = normalized(data.progress);
-  return { values, progress, migrated: progress.migrated };
+  const values = validatedValues(workbook, data.values);
+  // Existing rule-version archives may contain this retired false flag. Drop
+  // only that inert field; it never enables another format or character mode.
+  record(data.progress, 'progress', [...PROGRESS_KEYS, 'migrated']);
+  if (Object.hasOwn(data.progress, 'migrated') && data.progress.migrated !== false) fail('progress.migrated');
+  const input = copy(data.progress);
+  delete input.migrated;
+  const progress = normalized(input);
+  return { values, progress };
 }

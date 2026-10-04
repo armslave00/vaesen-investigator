@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { RulesEngine, ATTRIBUTES, SKILLS, XP_CELLS, normalizeProgress } from '../web/rules-engine.js';
+import { createRuleCardData, parseRuleCardData } from '../web/rule-storage.js';
 
 const workbook = JSON.parse(readFileSync(new URL('../web/data/workbook.json', import.meta.url), 'utf8'));
 const rules = JSON.parse(readFileSync(new URL('../web/data/rules.json', import.meta.url), 'utf8'));
@@ -14,11 +15,14 @@ const initial = {
 };
 const flat = (values) => Object.fromEntries(Object.entries(values).map(([address, value]) => [`${card}!${address}`, value]));
 const actor = (values = {}, progress = {}) => {
-  // Dice fixtures intentionally include already-developed characters. Import
-  // them through the public adoption lifecycle so play always has a snapshot.
-  const adopt = progress.phase === 'play';
-  const result = new RulesEngine(workbook, rules, flat({ ...initial, ...values }), adopt ? { ...progress, phase: 'creation' } : progress);
-  if (adopt) result.adoptExisting();
+  if (progress.phase !== 'play') return new RulesEngine(workbook, rules, flat({ ...initial, ...values }), progress);
+  // Every play fixture first completes a legal ordinary character. Scenario
+  // values then model explicit GM revisions without rewriting that snapshot.
+  const { phase, extraTalents = [], ...rest } = progress;
+  const result = new RulesEngine(workbook, rules, flat(initial), { ...rest, phase: 'creation' });
+  result.completeCreation();
+  for (const [cell, value] of Object.entries(values)) result.set(card, cell, value);
+  result.progress.extraTalents.push(...extraTalents);
   return result;
 };
 const playing = () => { const result = actor(); result.completeCreation(); return result; };
@@ -124,15 +128,16 @@ test('completing creation establishes a snapshot and no free experience', () => 
   rejectedWithoutMutation(calculation, () => calculation.buyTalent('富有'));
 });
 
-test('explicit creation or old-card adoption resolves the migration marker exactly once', () => {
-  for (const method of ['completeCreation', 'adoptExisting']) {
-    const calculation = actor({}, { migrated: true });
-    calculation[method]();
-    assert.equal(calculation.progress.migrated, false);
-    assert.equal(calculation.progress.creation.kind, method === 'completeCreation' ? 'created' : 'imported');
-    rejectedWithoutMutation(calculation, () => calculation.completeCreation());
-    rejectedWithoutMutation(calculation, () => calculation.adoptExisting());
-  }
+test('ordinary creation is the only supported transition into play and completes once', () => {
+  const calculation = actor();
+  assert.equal(calculation.adoptExisting, undefined);
+  calculation.completeCreation();
+  assert.equal(calculation.progress.creation.kind, 'created');
+  assert.equal(calculation.progress.creation.validated, true);
+  assert.equal(Object.hasOwn(calculation.progress, 'migrated'), false);
+  rejectedWithoutMutation(calculation, () => calculation.completeCreation());
+  assert.throws(() => normalizeProgress({ ...calculation.progress, creation: { ...calculation.progress.creation, kind: 'imported', validated: false } }));
+  assert.throws(() => normalizeProgress({ ...calculation.progress, migrated: false }));
 });
 
 test('growth purchases cannot bypass completion of ordinary character creation', () => {
@@ -142,15 +147,111 @@ test('growth purchases cannot bypass completion of ordinary character creation',
   assert.equal(calculation.derived().resource, 5);
 });
 
-test('adopting an existing grown card preserves skills, talents, zero assets and XP baseline', () => {
-  const calculation = actor({ N22: 5, A26: '勇敢', F18: 0, C18: 2 });
-  calculation.adoptExisting();
+test('restoring play validates the initial archetype, age budgets and resource investment', () => {
+  const calculation = playing();
+  for (const patch of [
+    { archetype: null }, { archetype: '不存在的范型' },
+    { age: 16 }, { age: 26.5 }, { age: true }, { age: null }, { age: 51 },
+    { attributeBudget: 15 }, { skillBudget: 10 }, { attributeBudget: null },
+    { resourceBase: 3 }, { resourceBase: null },
+    { resourcePurchased: -1 }, { resourcePurchased: 0.5 }, { resourcePurchased: true },
+    { resourcePurchased: 3, skills: { ...calculation.progress.creation.skills, N22: 0 } },
+  ]) {
+    const progress = structuredClone(calculation.progress);
+    Object.assign(progress.creation, patch);
+    assert.throws(() => new RulesEngine(workbook, rules, calculation.overrides, progress), /建卡快照/, JSON.stringify(patch));
+  }
+});
+
+test('a validated marker cannot authorize illegal initial ranges even when point totals match', () => {
+  const calculation = playing();
+  for (const attributes of [
+    { D20: 1, I20: 4, N20: 5, S20: 4 },
+    { D20: 5, I20: 2, N20: 4, S20: 3 },
+    { D20: 2, I20: 3, N20: 6, S20: 3 },
+  ]) {
+    const progress = structuredClone(calculation.progress);
+    progress.creation.attributes = attributes;
+    assert.throws(() => new RulesEngine(workbook, rules, calculation.overrides, progress), /初始属性/);
+  }
+  for (const changes of [{ D21: 3, N22: 0 }, { N22: 4, D21: 0, D22: 0 }, { D21: -1, N22: 3, D22: 2 }]) {
+    const progress = structuredClone(calculation.progress);
+    Object.assign(progress.creation.skills, changes);
+    assert.throws(() => new RulesEngine(workbook, rules, calculation.overrides, progress), /初始技能/);
+  }
+});
+
+test('restoring play recomputes allocation totals instead of trusting saved remaining points', () => {
+  const calculation = playing();
+  for (const modify of [
+    snapshot => { snapshot.attributes.D20 = 2; },
+    snapshot => { snapshot.attributes.D20 = 4; },
+    snapshot => { snapshot.skills.D21 = 0; },
+    snapshot => { snapshot.skills.D21 = 2; },
+    snapshot => { snapshot.resourcePurchased = 2; },
+    snapshot => { snapshot.attributeRemaining = 1; },
+    snapshot => { snapshot.skillRemaining = null; },
+  ]) {
+    const progress = structuredClone(calculation.progress);
+    modify(progress.creation);
+    assert.throws(() => new RulesEngine(workbook, rules, calculation.overrides, progress), /建卡快照无效/);
+  }
+});
+
+test('real completed v2 archives retain numeric input strings and null skills as zero', () => {
+  const calculation = actor(Object.fromEntries(Object.entries(initial).map(([cell, value]) => [cell, typeof value === 'number' ? String(value) : value])));
+  calculation.set(card, 'S22', null);
+  calculation.set(card, 'S23', null);
+  calculation.completeCreation();
+  const archive = createRuleCardData(workbook, calculation.overrides, calculation.progress);
+  const saved = parseRuleCardData(JSON.parse(JSON.stringify(archive)), workbook);
+  const restored = new RulesEngine(workbook, rules, saved.values, saved.progress);
+  assert.deepEqual(restored.progress.creation, calculation.progress.creation);
+  assert.deepEqual([restored.derived().attributeRemaining, restored.derived().skillRemaining], [0, 0]);
+  assert.equal(restored.progress.creation.age, '26');
+  assert.equal(restored.progress.creation.resourcePurchased, '1');
+  assert.equal(restored.progress.creation.skills.S22, null);
+  for (const [group, cell, invalid] of [['attributes', 'D20', true], ['attributes', 'N20', 'not a number'], ['skills', 'D21', 1.5], ['skills', 'S22', false]]) {
+    const progress = structuredClone(saved.progress);
+    progress.creation[group][cell] = invalid;
+    assert.throws(() => new RulesEngine(workbook, rules, saved.values, progress), /建卡快照无效/);
+  }
+});
+
+test('a forged v2 snapshot cannot enter play through the archive restore path', () => {
+  const calculation = playing();
+  const archive = createRuleCardData(workbook, calculation.overrides, calculation.progress);
+  archive.progress.creation.attributes.D20 = 1;
+  archive.values['角色卡!D20'] = 1;
+  const saved = parseRuleCardData(archive, workbook);
+  assert.throws(() => new RulesEngine(workbook, rules, saved.values, saved.progress), /D20 初始属性/);
+  assert.doesNotThrow(() => new RulesEngine(workbook, rules, saved.values));
+});
+
+test('restoring a valid creation snapshot preserves later GM revisions without revalidating current allocation', () => {
+  const calculation = playing();
+  const initialSnapshot = structuredClone(calculation.progress.creation);
+  const revisions = { D15: '牧师', D16: 51, D20: 1, N22: 5, C18: 2, A26: '勇敢', F18: 0 };
+  for (const [cell, value] of Object.entries(revisions)) calculation.set(card, cell, value);
+  const saved = parseRuleCardData(JSON.parse(JSON.stringify(createRuleCardData(workbook, calculation.overrides, calculation.progress))), workbook);
+  const restored = new RulesEngine(workbook, rules, saved.values, saved.progress);
+  assert.deepEqual(restored.progress.creation, initialSnapshot);
+  assert.equal(restored.progress.phase, 'play');
+  for (const [cell, value] of Object.entries(revisions)) assert.equal(restored.get(card, cell), value, cell);
+  assert.deepEqual([restored.derived().attributeRemaining, restored.derived().skillRemaining], [0, 0]);
+});
+
+test('explicit GM revisions retain current values without rewriting the completed creation snapshot', () => {
+  const calculation = playing();
+  const before = structuredClone(calculation.progress.creation);
+  for (const [cell, value] of Object.entries({ N22: 5, A26: '勇敢', F18: 0, C18: 2 })) calculation.set(card, cell, value);
   assert.equal(calculation.progress.phase, 'play');
   assert.equal(calculation.get(card, 'N22'), 5);
   assert.equal(calculation.derived().resource, 6);
   assert.equal(calculation.derived().currentAssets, 0);
   assert.ok(calculation.derived().ownedTalents.includes('勇敢'));
   assert.equal(calculation.derived().xp, 0);
+  assert.deepEqual(calculation.progress.creation, before);
 });
 
 test('skill growth costs five XP per level and does not consume the frozen creation budget', () => {
@@ -303,6 +404,9 @@ test('skill dice add the matching attribute and ignore unrelated condition categ
 test('a roll retains one die after normal penalties, while a blank attribute is invalid', () => {
   assert.equal(actor({ D20: 2, D21: 0, Y10: '●', Y11: '●', Y12: '●' }, { phase: 'play' }).roll({ skill: '敏捷' }).pool, 1);
   assert.equal(actor({ D20: null }, { phase: 'play' }).roll({ skill: '敏捷' }).status, 'invalid');
+  const belowMinimum = actor({ D20: 1 }, { phase: 'play' });
+  assert.ok(belowMinimum.derived().validation.some(issue => issue.cell === 'D20'));
+  assert.equal(belowMinimum.roll({ skill: '敏捷' }).status, 'invalid');
 });
 
 test('owned passive talents exempt only their named skill from matching ordinary conditions', () => {

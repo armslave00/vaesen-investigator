@@ -9,13 +9,14 @@
 
 ## Web 自动角色卡
 
-[打开网页版](https://vaesen-investigator-archive.auseaia01.chatgpt.site)（仅你可访问）。
+[既有 Sites 托管版本](https://vaesen-investigator-archive.auseaia01.chatgpt.site)（仅你可访问；本轮 PDF 与 GitHub Pages 更新尚未发布到该地址）。
 
-`web/` 保留 Excel v2.0 的 110 个可编辑字段，采用北欧调查员档案册风格。当前版本按中文规则书修正资料与计算，支持常规建卡校验、成长、技能与恐惧骰池、情境天赋、装备套用、经验及资产账本。输入自动保存于当前浏览器，支持 v2 JSON 导入导出与旧 v1 档案迁移。忠实复刻版本已提交为 `ff4de6f`，原始 Excel 和 PDF 均未修改。
+`web/` 保留 Excel v2.0 的 110 个可编辑字段，采用北欧调查员档案册风格。当前版本按中文规则书修正资料与计算，支持常规建卡校验、成长、技能与恐惧骰池、情境天赋、装备套用、经验及资产账本。角色完成常规建卡后进入成长；输入自动保存于当前浏览器，档案仅支持当前 v2 JSON 格式的导入导出。新增中文 PDF 导出，参照官方横版人物卡布局，长说明与账本完整续排。忠实复刻版本已提交为 `ff4de6f`，原始 Excel 和 PDF 均未修改。
 
-无需安装前端依赖，使用 Node.js 运行：
+使用 Node.js 24 安装锁定依赖后运行：
 
 ```bash
+npm ci
 npm run dev
 ```
 
@@ -24,13 +25,16 @@ npm run dev
 ```bash
 npm test
 npm run build
+node scripts/check-pages-build.mjs
 ```
 
-构建产物位于 `web/dist/`，可以部署到支持静态文件的网站服务。自动保存按浏览器与网址分别存储，迁移网址或设备前请先导出档案。
+构建产物位于 `web/dist/`，可作为静态网站部署。GitHub Pages 工作流在 `master` 更新时执行测试、构建与发布；首次启用步骤见下方说明。自动保存按浏览器与网址分别存储，更换网址或设备前请先导出 JSON 档案。
 
 - [网页使用与验证说明](docs/web-card.md)
 - [完整字段与公式清单](docs/web-card-workbook.md)
 - [规则书核验及原卡差异](docs/web-card-rules-audit.md)
+- [PDF 人物卡模板及字段映射](docs/pdf-character-sheet-reference.md)
+- [GitHub Pages 自动部署与首次启用](docs/github-pages.md)
 
 规则书与原卡差异（如牧师资源上限、“富有”资源奖励）已修正并记录。吸血鬼猎人保留为未核验扩展；译注歧义与实现解释在网页中明示。原 Excel 计算引擎和 72 项回归测试保留作历史对照。
 

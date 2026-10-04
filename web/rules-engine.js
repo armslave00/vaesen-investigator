@@ -49,11 +49,46 @@ const safeScalar = (value, label) => {
   if (!primitive(value) || typeof value === 'string' && value.length > 200000) throw new Error(`${label}格式不正确`);
   return value;
 };
+const skillName = (rules, name) => {
+  const value = clean(name);
+  return rules.skillAliases?.[value] ?? (value === '蛮力' ? '力量' : value);
+};
 
-// This is deliberately a finite, plain data schema. Imported progress never
+function validateCreationSnapshot(snapshot, rules) {
+  if (!snapshot) return;
+  const fail = (field, reason) => { throw new Error(`建卡快照无效：${field} ${reason}`); };
+  const archetype = rules.archetypes.find(item => item.name === clean(snapshot.archetype));
+  if (!archetype) fail('范型', '必须来自当前规则资料。');
+  const age = numeric(snapshot.age, NaN);
+  const group = integer(age) && age >= 17 ? rules.ageGroups.find(item => age >= item.min && (item.max === null || age <= item.max)) : null;
+  if (!group) fail('年龄', '必须是至少 17 岁的整数。');
+  if (snapshot.attributeBudget !== group.attributePoints || snapshot.skillBudget !== group.skillPoints) fail('预算', '必须与初始年龄对应。');
+  let attributeTotal = 0;
+  for (const attribute of ATTRIBUTES) {
+    const value = numeric(snapshot.attributes[attribute.cell], NaN);
+    const maximum = archetype.mainAttribute === attribute.name ? 5 : 4;
+    if (!integer(value) || value < 2 || value > maximum) fail(attribute.cell, `初始属性必须是 2–${maximum} 的整数。`);
+    attributeTotal += value;
+  }
+  let skillTotal = 0;
+  const mainSkill = skillName(rules, archetype.mainSkill);
+  for (const skill of SKILLS) {
+    const value = numeric(snapshot.skills[skill.cell]);
+    const maximum = mainSkill === skill.name ? 3 : 2;
+    if (!integer(value) || value < 0 || value > maximum) fail(skill.cell, `初始技能必须是 0–${maximum} 的整数。`);
+    skillTotal += value;
+  }
+  if (!integer(snapshot.resourceBase) || snapshot.resourceBase !== archetype.resourceMin) fail('初始资源', '必须等于初始范型的资源下限。');
+  const resourcePurchased = numeric(snapshot.resourcePurchased);
+  if (!integer(resourcePurchased) || resourcePurchased < 0 || resourcePurchased > archetype.resourceMax - archetype.resourceMin) fail('资源加点', '必须是范型建卡范围内的非负整数。');
+  if (snapshot.attributeRemaining !== 0 || attributeTotal !== group.attributePoints) fail('属性分配', '必须恰好用完初始属性预算。');
+  if (snapshot.skillRemaining !== 0 || skillTotal + resourcePurchased !== group.skillPoints) fail('技能分配', '技能与资源投资必须恰好用完初始技能预算。');
+}
+
+// This is deliberately a finite, plain data schema. Saved progress never
 // executes code, implicitly grants XP, or treats a boolean as a numeric balance.
 export function normalizeProgress(progress = {}) {
-  assertKeys(progress, ['phase', 'xp', 'assets', 'extraTalents', 'ledger', 'session', 'creation', 'migrated'], '成长记录');
+  assertKeys(progress, ['phase', 'xp', 'assets', 'extraTalents', 'ledger', 'session', 'creation'], '成长记录');
   const phase = progress.phase ?? 'creation';
   if (!['creation', 'play'].includes(phase)) throw new Error('角色阶段不正确');
   const xp = safeBalance(progress.xp ?? 0, '经验余额');
@@ -77,7 +112,7 @@ export function normalizeProgress(progress = {}) {
   if (progress.creation !== undefined && progress.creation !== null) {
     const input = progress.creation;
     assertKeys(input, ['kind', 'validated', 'archetype', 'age', 'attributeBudget', 'skillBudget', 'attributes', 'skills', 'resourceBase', 'resourcePurchased', 'attributeRemaining', 'skillRemaining'], '建卡快照');
-    if (!['created', 'imported'].includes(input.kind) || typeof input.validated !== 'boolean' || input.validated !== (input.kind === 'created')) throw new Error('建卡快照状态不正确');
+    if (input.kind !== 'created' || input.validated !== true) throw new Error('建卡快照必须来自已完成的常规建卡。');
     if (!(input.archetype === null || typeof input.archetype === 'string')) throw new Error('建卡快照范型不正确');
     const nullableNumber = (value, label) => {
       if (value !== null && (typeof value !== 'number' || !Number.isFinite(value))) throw new Error(`${label}不正确`);
@@ -101,10 +136,8 @@ export function normalizeProgress(progress = {}) {
       skillRemaining: nullableNumber(input.skillRemaining, '初始剩余技能'),
     };
   }
-  if (phase === 'play' && !creation) throw new Error('游戏阶段缺少建卡或旧角色采用记录');
-  const migrated = progress.migrated ?? false;
-  if (typeof migrated !== 'boolean') throw new Error('迁移标记不正确');
-  return { phase, xp, assets, extraTalents: talents, ledger, session, creation, migrated };
+  if (phase === 'play' && !creation) throw new Error('游戏阶段缺少已完成的建卡记录。');
+  return { phase, xp, assets, extraTalents: talents, ledger, session, creation };
 }
 
 export class RulesEngine extends FormulaEngine {
@@ -113,6 +146,7 @@ export class RulesEngine extends FormulaEngine {
     if (!rules || !Array.isArray(rules.archetypes) || !Array.isArray(rules.ageGroups) || !Array.isArray(rules.resources) || !Array.isArray(rules.talents)) throw new Error('规则数据不完整');
     this.rules = rules;
     this.progress = normalizeProgress(progress);
+    validateCreationSnapshot(this.progress.creation, rules);
     this.talentMap = new Map(rules.talents.map(talent => [talent.name, talent]));
   }
   _raw(sheet, address) {
@@ -120,7 +154,7 @@ export class RulesEngine extends FormulaEngine {
     catch (cause) { if (typeof cause.code === 'string') return cause.code; throw cause; }
   }
   _talentName(name) { const value = clean(name); return this.rules.talentAliases?.[value] ?? (value === '人多胆壮' ? '人多壮胆' : value); }
-  _skillName(name) { const value = clean(name); return this.rules.skillAliases?.[value] ?? (value === '蛮力' ? '力量' : value); }
+  _skillName(name) { return skillName(this.rules, name); }
   _talents() { return [...TALENT_CELLS.map(cell => this._raw(CARD, cell)), ...this.progress.extraTalents].map(name => this._talentName(name)).filter(Boolean); }
   _age(value) {
     const age = numeric(value, NaN);
@@ -187,8 +221,7 @@ export class RulesEngine extends FormulaEngine {
     for (const item of ATTRIBUTES) {
       const value = numeric(this._raw(CARD, item.cell), NaN);
       const maximum = phase === 'creation' && archetype?.mainAttribute !== item.name ? 4 : 5;
-      const minimum = phase === 'play' && this.progress.creation?.kind === 'imported' ? 1 : 2;
-      if (!integer(value) || value < minimum || value > maximum) add(item.cell, `${item.name}${minimum === 2 ? '常规建卡' : ''}为 ${minimum}–${maximum} 的整数。`);
+      if (!integer(value) || value < 2 || value > maximum) add(item.cell, `${item.name}常规建卡为 2–${maximum} 的整数。`);
     }
     for (const item of SKILLS) {
       const value = numeric(this._raw(CARD, item.cell));
@@ -218,35 +251,24 @@ export class RulesEngine extends FormulaEngine {
       }
     }
     if (archetype?.verified === false) warnings.push('吸血鬼猎人为扩展范型，现有基础规则书未独立核验。');
-    if (this.progress.creation?.kind === 'imported') warnings.push('此角色通过旧卡采用进入游戏；初始预算快照仅保存导入值，不表示通过常规建卡核验。');
-    if (phase === 'play' && this.progress.creation?.kind === 'imported' && attributes.some(value => numeric(value, NaN) === 1)) warnings.push('导入角色含属性 1；可选人生轨迹建卡允许该数值，未按常规建卡强制改写。');
     if (integer(resource) && resource > 8) warnings.push('规则书资源表未收录大于 8 的生活标准、标准资产与交易奖励；资源值保留，请与 GM 确认。');
     return { phase, archetype, age, attributeRemaining, skillRemaining, resource, resourceBase, resourcePurchased: Number.isFinite(resourcePurchased) ? resourcePurchased : null, wealthyCount, lifestyle: standard?.name ?? '', standardAssets: standard?.assets ?? null, exchangeBonus: standard?.exchangeBonus ?? null, currentAssets, xp: this.progress.xp, pendingXP: this.progress.session.settled ? 0 : 1 + XP_CELLS.slice(1).filter(cell => this._raw(CARD, cell) === '●').length, sessionSettled: this.progress.session.settled, validation, warnings, ownedTalents, extraTalents: [...this.progress.extraTalents] };
   }
-  _snapshot(kind, data) {
+  _snapshot(data) {
     const attributes = Object.fromEntries(ATTRIBUTES.map(item => [item.cell, this._raw(CARD, item.cell)]));
     const skills = Object.fromEntries(SKILLS.map(item => [item.cell, this._raw(CARD, item.cell)]));
-    return { kind, validated: kind === 'created', archetype: data.archetype?.name ?? (clean(this._raw(CARD, 'D15')) || null), age: this._raw(CARD, 'D16'), attributeBudget: data.age.attributeBudget, skillBudget: data.age.skillBudget, attributes, skills, resourceBase: data.resourceBase, resourcePurchased: this._raw(CARD, 'C18'), attributeRemaining: data.attributeRemaining, skillRemaining: data.skillRemaining };
+    return { kind: 'created', validated: true, archetype: data.archetype?.name ?? (clean(this._raw(CARD, 'D15')) || null), age: this._raw(CARD, 'D16'), attributeBudget: data.age.attributeBudget, skillBudget: data.age.skillBudget, attributes, skills, resourceBase: data.resourceBase, resourcePurchased: this._raw(CARD, 'C18'), attributeRemaining: data.attributeRemaining, skillRemaining: data.skillRemaining };
   }
-  _play() { if (this.progress.phase !== 'play') throw new Error('请先完成建卡或明确采用旧角色，再进行游戏操作。'); }
+  _play() { if (this.progress.phase !== 'play') throw new Error('请先完成建卡，再进行游戏操作。'); }
   _changed() { this.cache.clear(); return this.derived(); }
   completeCreation() {
     if (this.progress.phase !== 'creation') throw new Error('该角色已经进入游戏。');
     const data = this.derived();
     if (data.validation.length) throw new Error(`建卡尚未完成：${data.validation.map(item => item.message).join(' ')}`);
-    const creation = this._snapshot('created', data);
+    const creation = this._snapshot(data);
+    validateCreationSnapshot(creation, this.rules);
     this.progress.creation = creation;
     this.progress.phase = 'play';
-    this.progress.migrated = false;
-    if (this.progress.assets === null) this.progress.assets = data.currentAssets;
-    return this._changed();
-  }
-  adoptExisting() {
-    if (this.progress.phase !== 'creation') throw new Error('该角色已经进入游戏。');
-    const data = this.derived();
-    this.progress.creation = this._snapshot('imported', data);
-    this.progress.phase = 'play';
-    this.progress.migrated = false;
     if (this.progress.assets === null) this.progress.assets = data.currentAssets;
     return this._changed();
   }
@@ -391,7 +413,7 @@ export class RulesEngine extends FormulaEngine {
     }
     const attribute = kind === 'fear' ? ATTRIBUTES.find(item => item.name === fearAttribute) : ATTRIBUTES.find(item => item.cell === skill.attributeCell);
     const attributeValue = numeric(this._raw(CARD, attribute.cell), NaN);
-    if (!integer(attributeValue) || attributeValue < 1 || attributeValue > 5) return result('invalid', `${attribute.name}需为 1–5 的合法属性值，且不能留空。`);
+    if (!integer(attributeValue) || attributeValue < 2 || attributeValue > 5) return result('invalid', `${attribute.name}需为 2–5 的合法属性值，且不能留空。`);
     const skillValue = kind === 'skill' ? numeric(this._raw(CARD, skill.cell)) : 0;
     if (!integer(skillValue) || skillValue < 0 || skillValue > 5) return result('invalid', '技能需为 0–5 的整数。');
     const add = (label, value) => { if (value !== 0) terms.push({ label, value }); };

@@ -6,12 +6,12 @@ import { createRuleCardData, parseRuleCardData } from '../web/rule-storage.js';
 
 const workbook = JSON.parse(readFileSync(new URL('../web/data/workbook.json', import.meta.url), 'utf8'));
 const attributes = { D20: 2, I20: 2, N20: 5, S20: 4 };
-const skills = { D21: 0, D22: 0, D23: 0, I21: 0, I22: 0, I23: 0, N21: 1, N22: 3, N23: 2, S21: 0, S22: 0, S23: 0 };
+const skills = { D21: 1, D22: 1, D23: 1, I21: 1, I22: 1, I23: 1, N21: 1, N22: 3, N23: 2, S21: 0, S22: 0, S23: 0 };
 const values = { '角色卡!A2': '森林调查员', '角色卡!D15': '学者', '角色卡!D16': 51, '角色卡!C18': 2, '角色卡!E25': '自定义描述\n第二行' };
 const snapshot = () => ({
   kind: 'created', validated: true, archetype: '学者', age: 51,
   attributeBudget: 13, skillBudget: 14, attributes: { ...attributes }, skills: { ...skills },
-  resourceBase: 4, resourcePurchased: 2, attributeRemaining: 0, skillRemaining: 6,
+  resourceBase: 4, resourcePurchased: 2, attributeRemaining: 0, skillRemaining: 0,
 });
 const progress = () => ({
   phase: 'play', xp: 7, assets: 3, extraTalents: ['富有', '富有', '勇敢'],
@@ -21,7 +21,7 @@ const progress = () => ({
     { kind: 'xp', amount: 4, balance: 7, reason: '第 2 场游戏', sessionId: 2 },
     { kind: 'assets', amount: -2, balance: 3, reason: '购买用品', sessionId: 2 },
   ],
-  session: { id: 2, settled: true }, creation: snapshot(), migrated: false,
+  session: { id: 2, settled: true }, creation: snapshot(),
 });
 const archive = (state = progress()) => createRuleCardData(workbook, values, state);
 const roundtrip = (data) => parseRuleCardData(JSON.parse(JSON.stringify(data)), workbook);
@@ -34,7 +34,8 @@ test('v2 archives preserve every progression field, repeated Wealthy talents and
   const restored = roundtrip(data);
   assert.deepEqual(restored.values, values);
   assert.deepEqual(restored.progress, progress());
-  assert.equal(restored.migrated, false);
+  assert.equal(Object.hasOwn(restored, 'migrated'), false);
+  assert.equal(Object.hasOwn(restored.progress, 'migrated'), false);
 });
 
 test('export takes an independent snapshot without mutating or retaining nested caller objects', () => {
@@ -49,27 +50,27 @@ test('export takes an independent snapshot without mutating or retaining nested 
   assert.deepEqual(data.progress, before);
 });
 
-test('v1 migration retains all 110 inputs without guessing creation completion or XP settlement', () => {
+test('version 1 archives are rejected instead of entering a compatibility flow', () => {
   const examples = [0, null, '', -5, 0.5, true, false, '多行\n文字', '=纯文字'];
   const allValues = Object.fromEntries(workbook.controls.map(({ sheet, cell }, index) => [sheet + '!' + cell, examples[index % examples.length]]));
-  const migrated = roundtrip(createCardData(workbook, allValues));
-  assert.deepEqual(migrated.values, allValues);
-  assert.equal(migrated.migrated, true);
-  assert.equal(migrated.progress.phase, 'creation');
-  assert.equal(migrated.progress.xp, 0);
-  assert.equal(migrated.progress.assets, null);
-  assert.equal(migrated.progress.creation, null);
-  assert.deepEqual(migrated.progress.extraTalents, []);
-  assert.deepEqual(migrated.progress.ledger, []);
-  assert.deepEqual(migrated.progress.session, { id: 1, settled: false });
+  assert.throws(() => roundtrip(createCardData(workbook, allValues)));
 });
 
-test('pending v1 migration remains visible after v2 save/reopen and imported snapshots preserve malformed source scalars', () => {
-  const migrated = roundtrip(createCardData(workbook, values));
-  assert.equal(roundtrip(createRuleCardData(workbook, migrated.values, migrated.progress)).migrated, true);
-  const state = progress();
-  state.creation = { ...snapshot(), kind: 'imported', validated: false, age: '51.5', resourcePurchased: true, attributes: { ...attributes, D20: false }, skills: { ...skills, D21: '2' } };
-  assert.deepEqual(roundtrip(archive(state)).progress.creation, state.creation);
+test('current created archives remain readable while the retired false flag is removed from output', () => {
+  const data = archive();
+  data.progress.migrated = false;
+  assert.deepEqual(roundtrip(data), { values, progress: progress() });
+  assert.equal(Object.hasOwn(roundtrip(data).progress, 'migrated'), false);
+  for (const flag of [true, 'false', null]) assert.throws(() => roundtrip({ ...data, progress: { ...data.progress, migrated: flag } }));
+  assert.throws(() => archive({ ...progress(), migrated: false }));
+});
+
+test('unsupported imported and unvalidated snapshots are rejected for export and restore', () => {
+  for (const patch of [{ kind: 'imported', validated: false }, { kind: 'created', validated: false }]) {
+    const state = { ...progress(), creation: { ...snapshot(), ...patch } };
+    assert.throws(() => archive(state));
+    assert.throws(() => roundtrip({ ...archive(), progress: state }));
+  }
 });
 
 test('empty progression receives safe defaults', () => {
@@ -77,7 +78,7 @@ test('empty progression receives safe defaults', () => {
   assert.equal(restored.progress.phase, 'creation');
   assert.equal(restored.progress.xp, 0);
   assert.equal(restored.progress.assets, null);
-  assert.equal(restored.progress.migrated, false);
+  assert.equal(Object.hasOwn(restored.progress, 'migrated'), false);
   assert.deepEqual(restored.progress.session, { id: 1, settled: false });
 });
 
