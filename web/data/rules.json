@@ -1,0 +1,4189 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "path": "raw-docs/北欧奇谭规则书.pdf",
+    "sha256": "80ddb5f99814a98b4d0ccd94e07cacfea61a53ada96238cbf72f4a322e8a63dd",
+    "label": "北欧奇谭基础规则书（本地中文版本）"
+  },
+  "archetypes": [
+    {
+      "name": "学者",
+      "verified": true,
+      "resourceMin": 4,
+      "resourceMax": 6,
+      "mainAttribute": "逻辑",
+      "mainSkill": "学习",
+      "talents": [
+        "书虫",
+        "学富五车",
+        "知识是可靠的"
+      ],
+      "equipment": "藏书或地图集、书写工具、烈酒或计算尺",
+      "equipmentChoices": [
+        [
+          "藏书",
+          "地图集"
+        ],
+        [
+          "书写工具"
+        ],
+        [
+          "烈酒",
+          "计算尺"
+        ]
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 30,
+        "printedPage": 26,
+        "anchor": "section-21",
+        "label": "原书 26 / PDF 30"
+      }
+    },
+    {
+      "name": "医生",
+      "verified": true,
+      "resourceMin": 4,
+      "resourceMax": 6,
+      "mainAttribute": "逻辑",
+      "mainSkill": "医学",
+      "talents": [
+        "军医",
+        "主任医师",
+        "应急医学"
+      ],
+      "equipment": "装有医疗用品的医生背包、烈酒或好酒、瘦弱的马或强效毒药",
+      "equipmentChoices": [
+        [
+          "装有医疗用品的医生背包"
+        ],
+        [
+          "烈酒",
+          "好酒"
+        ],
+        [
+          "瘦弱的马",
+          "强效毒药"
+        ]
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 31,
+        "printedPage": 27,
+        "anchor": "section-22",
+        "label": "原书 27 / PDF 31"
+      }
+    },
+    {
+      "name": "猎人",
+      "verified": true,
+      "resourceMin": 2,
+      "resourceMax": 4,
+      "mainAttribute": "精准",
+      "mainSkill": "远程战斗",
+      "talents": [
+        "寻血犬",
+        "草药专家",
+        "神射手"
+      ],
+      "equipment": "来复枪、猎刀或猎犬、狩猎陷阱或狩猎装备",
+      "equipmentChoices": [
+        [
+          "来复枪"
+        ],
+        [
+          "猎刀",
+          "猎犬"
+        ],
+        [
+          "狩猎陷阱",
+          "狩猎装备"
+        ]
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 32,
+        "printedPage": 28,
+        "anchor": "section-23",
+        "label": "原书 28 / PDF 32"
+      }
+    },
+    {
+      "name": "神秘学家",
+      "verified": true,
+      "resourceMin": 1,
+      "resourceMax": 4,
+      "mainAttribute": "精准",
+      "mainSkill": "隐秘行动",
+      "talents": [
+        "魔术手法",
+        "灵媒",
+        "恐惧来袭"
+      ],
+      "equipment": "水晶球，牡鹿角粉（第 123 页）或火绒盒，匕首或烹饪锅",
+      "equipmentChoices": [
+        [
+          "水晶球"
+        ],
+        [
+          "牡鹿角粉（第 123 页）",
+          "火绒盒"
+        ],
+        [
+          "匕首",
+          "烹饪锅"
+        ]
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 33,
+        "printedPage": 29,
+        "anchor": "section-24",
+        "label": "原书 29 / PDF 33"
+      }
+    },
+    {
+      "name": "军官",
+      "verified": true,
+      "resourceMin": 3,
+      "resourceMax": 7,
+      "mainAttribute": "精准",
+      "mainSkill": "远程战斗",
+      "talents": [
+        "久经沙场",
+        "绅士",
+        "战术家"
+      ],
+      "equipment": "来复枪或手枪，指南针或刺刀、地图册或军刀",
+      "equipmentChoices": [
+        [
+          "来复枪",
+          "手枪"
+        ],
+        [
+          "指南针",
+          "刺刀"
+        ],
+        [
+          "地图册",
+          "军刀"
+        ]
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 34,
+        "printedPage": 30,
+        "anchor": "section-25",
+        "label": "原书 30 / PDF 34"
+      }
+    },
+    {
+      "name": "牧师",
+      "verified": true,
+      "resourceMin": 4,
+      "resourceMax": 6,
+      "mainAttribute": "共情",
+      "mainSkill": "观察",
+      "talents": [
+        "赦免",
+        "祝福",
+        "忏悔者"
+      ],
+      "equipment": "乐器或好酒、书写用具、圣水或旧圣经（第 123 页）",
+      "equipmentChoices": [
+        [
+          "乐器",
+          "好酒"
+        ],
+        [
+          "书写用具"
+        ],
+        [
+          "圣水",
+          "旧圣经（第 123 页）"
+        ]
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 35,
+        "printedPage": 31,
+        "anchor": "section-26",
+        "label": "原书 31 / PDF 35"
+      }
+    },
+    {
+      "name": "私家侦探",
+      "verified": true,
+      "resourceMin": 2,
+      "resourceMax": 5,
+      "mainAttribute": "逻辑",
+      "mainSkill": "调查",
+      "talents": [
+        "鹰眼",
+        "基础推演法",
+        "专注"
+      ],
+      "equipment": "放大镜或开锁器、左轮手枪、指虎或双筒望远镜",
+      "equipmentChoices": [
+        [
+          "放大镜",
+          "开锁器"
+        ],
+        [
+          "左轮手枪"
+        ],
+        [
+          "指虎",
+          "双筒望远镜"
+        ]
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 36,
+        "printedPage": 32,
+        "anchor": "section-27",
+        "label": "原书 32 / PDF 36"
+      }
+    },
+    {
+      "name": "仆人",
+      "verified": true,
+      "resourceMin": 2,
+      "resourceMax": 4,
+      "mainAttribute": "体能",
+      "mainSkill": "力量",
+      "talents": [
+        "忠诚",
+        "坚韧",
+        "强硬如钉"
+      ],
+      "equipment": "左轮手枪、马灯或化妆用品、野外炊具套组或简易绷带",
+      "equipmentChoices": [
+        [
+          "左轮手枪"
+        ],
+        [
+          "马灯",
+          "化妆用品"
+        ],
+        [
+          "野外炊具套组",
+          "简易绷带"
+        ]
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 37,
+        "printedPage": 33,
+        "anchor": "section-28",
+        "label": "原书 33 / PDF 37"
+      }
+    },
+    {
+      "name": "流浪者",
+      "verified": true,
+      "resourceMin": 1,
+      "resourceMax": 3,
+      "mainAttribute": "体能",
+      "mainSkill": "操控人心",
+      "talents": [
+        "流浪者戏法",
+        "疑心",
+        "云游"
+      ],
+      "equipment": "拐杖、小刀或撬棍、宠物犬或烈酒",
+      "equipmentChoices": [
+        [
+          "拐杖"
+        ],
+        [
+          "小刀",
+          "撬棍"
+        ],
+        [
+          "宠物犬",
+          "烈酒"
+        ]
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 38,
+        "printedPage": 34,
+        "anchor": "section-29",
+        "label": "原书 34 / PDF 38"
+      }
+    },
+    {
+      "name": "作家",
+      "verified": true,
+      "resourceMin": 2,
+      "resourceMax": 5,
+      "mainAttribute": "共情",
+      "mainSkill": "启迪",
+      "talents": [
+        "自动书写",
+        "记者",
+        "墨客"
+      ],
+      "equipment": "书写工具和纸，相机或观剧镜、宠物犬或藏书",
+      "equipmentChoices": [
+        [
+          "书写工具和纸"
+        ],
+        [
+          "相机",
+          "观剧镜"
+        ],
+        [
+          "宠物犬",
+          "藏书"
+        ]
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 39,
+        "printedPage": 35,
+        "anchor": "section-30",
+        "label": "原书 35 / PDF 39"
+      }
+    },
+    {
+      "name": "吸血鬼猎人",
+      "verified": false,
+      "resourceMin": 1,
+      "resourceMax": 3,
+      "mainAttribute": "精准",
+      "mainSkill": "近身战斗",
+      "talents": [
+        "吸血者恨意",
+        "穿刺者",
+        "猎杀时刻"
+      ],
+      "equipment": "木桩、十字架项链、弩、剑。",
+      "equipmentChoices": [
+        [
+          "木桩"
+        ],
+        [
+          "十字架项链"
+        ],
+        [
+          "弩"
+        ],
+        [
+          "剑"
+        ]
+      ],
+      "source": {
+        "document": "vaesen自动卡by拂晓鵺啼 v2.0.xlsx",
+        "sheet": "辅助表",
+        "range": "A12:I12",
+        "markdown": "docs/web-card-workbook.md",
+        "pdfPage": null,
+        "printedPage": null,
+        "label": "Excel 扩展（基础规则书未核验）"
+      },
+      "warnings": [
+        "此范型及三个天赋不在本地基础规则书中，沿用 Excel 扩展数据。"
+      ]
+    }
+  ],
+  "talents": [
+    {
+      "name": "书虫",
+      "category": "学者",
+      "description": "从书籍中或图书馆中寻找线索时，学习检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "学习",
+          "amount": 2,
+          "condition": "从书籍或图书馆寻找线索"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 54,
+        "printedPage": 50,
+        "anchor": "section-02",
+        "label": "原书 50 / PDF 54"
+      },
+      "warnings": []
+    },
+    {
+      "name": "学富五车",
+      "category": "学者",
+      "description": "你可以学习检定来构建游戏中地点和现象的真相。你可以知道某个地点以玻璃工人而闻名，或是有犯罪分子在该地区活动。由 GM 可以判断什么合适，什么是你可以知道的。你不应创造和自在之物有关的内容。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "establishFact",
+          "activation": "manual",
+          "target": "学习",
+          "condition": "地点或现象的真相；GM 决定；不能创造自在之物相关内容"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 54,
+        "printedPage": 50,
+        "anchor": "section-03",
+        "label": "原书 50 / PDF 54"
+      },
+      "warnings": []
+    },
+    {
+      "name": "知识是可靠的",
+      "category": "学者",
+      "description": "在学习检定中无视状态的影响。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreConditions",
+          "activation": "always",
+          "target": "学习",
+          "conditionType": "relevant",
+          "condition": "对应技能检定"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 54,
+        "printedPage": 50,
+        "anchor": "section-04",
+        "label": "原书 50 / PDF 54"
+      },
+      "warnings": []
+    },
+    {
+      "name": "军医",
+      "category": "医生",
+      "description": "在面对尸体或是残破的人体时，恐惧检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "恐惧",
+          "amount": 2,
+          "condition": "面对尸体或残破人体"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 54,
+        "printedPage": 50,
+        "anchor": "section-06",
+        "label": "原书 50 / PDF 54"
+      },
+      "warnings": []
+    },
+    {
+      "name": "主任医师",
+      "category": "医生",
+      "description": "当使用医学检定治疗其他玩家时，你的成功可以治疗 4 个症状，而非 3 个。该天赋同样适用于额外成功。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "healingPerSuccess",
+          "activation": "manual",
+          "target": "医学",
+          "amount": 4,
+          "replaces": 3,
+          "condition": "通过医学治疗其他玩家的状态；额外成功同样适用"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 54,
+        "printedPage": 50,
+        "anchor": "section-07",
+        "label": "原书 50 / PDF 54"
+      },
+      "warnings": []
+    },
+    {
+      "name": "应急医学",
+      "category": "医生",
+      "description": "医学检定时无视状态影响。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreConditions",
+          "activation": "always",
+          "target": "医学",
+          "conditionType": "relevant",
+          "condition": "对应技能检定",
+          "ambiguity": "正文写无视状态；译注明确指出英文原文精神状态与医学属精准的矛盾，官方没有勘误，应由游戏小组确认解释。"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 54,
+        "printedPage": 50,
+        "anchor": "section-08",
+        "label": "原书 50 / PDF 54"
+      },
+      "warnings": [
+        "译注 1：英文原文精神状态与医学属精准矛盾；官方未勘误，请游戏小组确认解释。"
+      ]
+    },
+    {
+      "name": "寻血犬",
+      "category": "猎人",
+      "description": "追踪猎物时警觉检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "警觉",
+          "amount": 2,
+          "condition": "追踪猎物"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 54,
+        "printedPage": 50,
+        "anchor": "section-10",
+        "label": "原书 50 / PDF 54"
+      },
+      "warnings": []
+    },
+    {
+      "name": "草药专家",
+      "category": "猎人",
+      "description": "通过野外的草药，你可以在没有医疗用品的情况下使用医学检定。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreEquipmentRequirement",
+          "activation": "manual",
+          "target": "医学",
+          "condition": "使用野外草药替代医疗用品"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 54,
+        "printedPage": 50,
+        "anchor": "section-11",
+        "label": "原书 50 / PDF 54"
+      },
+      "warnings": []
+    },
+    {
+      "name": "神射手",
+      "category": "猎人",
+      "description": "当你成功埋伏并首次攻击目标时，你的远程战斗检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "远程战斗",
+          "amount": 2,
+          "condition": "成功埋伏后的首次攻击"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 54,
+        "printedPage": 50,
+        "anchor": "section-12",
+        "label": "原书 50 / PDF 54"
+      },
+      "warnings": []
+    },
+    {
+      "name": "魔术手法",
+      "category": "神秘学家",
+      "description": "当你使用魔术手法影响他人时，你可以用隐秘行动检定替代操控人心检定。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "replaceSkill",
+          "activation": "manual",
+          "target": "操控人心",
+          "replacement": "隐秘行动",
+          "condition": "使用魔术手法影响他人"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 55,
+        "printedPage": 51,
+        "anchor": "section-14",
+        "label": "原书 51 / PDF 55"
+      },
+      "warnings": []
+    },
+    {
+      "name": "灵媒",
+      "category": "神秘学家",
+      "description": "你可以通过观察检定来进行降灵仪式，并借此联络死者并预测他人的未来。额外的成功会提供更多信息，延长联系时间，或者让灵体直接现身。若检定失败，你会得到不准确的信息，遭受攻击，或承受某种状态。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "specialAction",
+          "activation": "manual",
+          "target": "观察",
+          "condition": "降灵仪式；额外成功提供更多信息/时间/显现；失败可能误导、攻击或状态"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 55,
+        "printedPage": 51,
+        "anchor": "section-15",
+        "label": "原书 51 / PDF 55"
+      },
+      "warnings": []
+    },
+    {
+      "name": "恐惧来袭",
+      "category": "神秘学家",
+      "description": "你可以使用 1 级的恐惧检定（见第 68 页）来实现恐惧打击。这是一个缓慢动作，且对自在之物无效。在你的区域里选择一个受害者，且目标 NPC 必须通过逻辑检定或共情检定。他可以获得和范围内友善单位个数相同的奖励骰。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "fearAttack",
+          "activation": "manual",
+          "target": "逻辑/共情",
+          "fearLevel": 1,
+          "action": "slow",
+          "condition": "本区域一个 NPC；对自在之物无效；NPC 可按范围内友善单位数量获得奖励骰"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 55,
+        "printedPage": 51,
+        "anchor": "section-16",
+        "label": "原书 51 / PDF 55"
+      },
+      "warnings": []
+    },
+    {
+      "name": "久经沙场",
+      "category": "军官",
+      "description": "你对战斗司空见惯，进行先攻检定时，你可以抽取两张卡并任选一张。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "initiativeDraw",
+          "activation": "always",
+          "draw": 2,
+          "keep": 1,
+          "condition": "确定先攻时"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 56,
+        "printedPage": 52,
+        "anchor": "section-18",
+        "label": "原书 52 / PDF 56"
+      },
+      "warnings": []
+    },
+    {
+      "name": "绅士",
+      "category": "军官",
+      "description": "你被教育必须在社交场合控制好自己的行为和情绪，哪怕是在压力环境下也必须如此。在进行操控人心检定时，无视精神状态带来的惩罚。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreConditions",
+          "activation": "always",
+          "target": "操控人心",
+          "conditionType": "mental",
+          "condition": "对应技能检定"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 56,
+        "printedPage": 52,
+        "anchor": "section-19",
+        "label": "原书 52 / PDF 56"
+      },
+      "warnings": []
+    },
+    {
+      "name": "战术家",
+      "category": "军官",
+      "description": "当你在远程战斗检定中获得额外成功时，除了通常的可选效果外你还有一个额外选择，向一个友善单位下达指令。这必须消耗一个成功数。如果对方遵循你的指令，则可以在下一个检定中获得 +2（可以多次给不同的人下达指令）。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "grantNextCheckBonus",
+          "activation": "manual",
+          "amount": 2,
+          "spendExtraSuccesses": 1,
+          "condition": "远程战斗额外成功；友善单位遵从指令；可指令多名不同单位"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 56,
+        "printedPage": 52,
+        "anchor": "section-20",
+        "label": "原书 52 / PDF 56"
+      },
+      "warnings": []
+    },
+    {
+      "name": "赦免",
+      "category": "牧师",
+      "description": "玩家角色向你忏悔，袒露自己的行为时（见第 72. 页）可以治愈三个状态，而非两个。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "confessionHealing",
+          "activation": "manual",
+          "amount": 3,
+          "replaces": 2,
+          "condition": "其他角色向你忏悔并袒露行为"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 56,
+        "printedPage": 52,
+        "anchor": "section-22",
+        "label": "原书 52 / PDF 56"
+      },
+      "warnings": []
+    },
+    {
+      "name": "祝福",
+      "category": "牧师",
+      "description": "每次游戏你可以祝福一个物品或另一个玩家。玩家角色或使用该物品的人将获得祝福优势，并在他们所选择的检定中 +2。这一优势会在使用或谜题结束后失效。每个谜题你只能祝福一个角色或一件物品。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "grantAdvantage",
+          "activation": "manual",
+          "amount": 2,
+          "target": "any",
+          "uses": {
+            "count": 1,
+            "period": "mystery"
+          },
+          "condition": "祝福一个物品或另一个玩家；选择一次检定；使用或谜题结束失效",
+          "ambiguity": "正文同时写每次游戏可祝福、每个谜题只能祝福一个对象，保留两种限制，不自动刷新。"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 56,
+        "printedPage": 52,
+        "anchor": "section-23",
+        "label": "原书 52 / PDF 56"
+      },
+      "warnings": []
+    },
+    {
+      "name": "忏悔者",
+      "category": "牧师",
+      "description": "在保密的谈话中，你可以使用观察检定替代操控人心检定。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "replaceSkill",
+          "activation": "manual",
+          "target": "操控人心",
+          "replacement": "观察",
+          "condition": "保密的谈话"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 56,
+        "printedPage": 52,
+        "anchor": "section-24",
+        "label": "原书 52 / PDF 56"
+      },
+      "warnings": []
+    },
+    {
+      "name": "鹰眼",
+      "category": "私家侦探",
+      "description": "当你试图进行远程的观测时，你的警觉检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "警觉",
+          "amount": 2,
+          "condition": "远程观测"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-26",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "基础推演法",
+      "category": "私家侦探",
+      "description": "每次游戏一次，你可以要求 GM 解释线索是如何串联的。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "askGM",
+          "activation": "manual",
+          "uses": {
+            "count": 1,
+            "period": "session"
+          },
+          "condition": "要求 GM 解释线索如何串联"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-27",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "专注",
+      "category": "私家侦探",
+      "description": "进行调查检定时无视状态带来的惩罚。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreConditions",
+          "activation": "always",
+          "target": "调查",
+          "conditionType": "relevant",
+          "condition": "对应技能检定"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-28",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "忠诚",
+      "category": "仆人",
+      "description": "当你发誓保护的人在场时，你的恐惧检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "恐惧",
+          "amount": 2,
+          "condition": "你发誓保护的人在场"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-30",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "强硬如钉",
+      "category": "仆人",
+      "description": "徒手战斗时，力量检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "weapon",
+          "target": "力量",
+          "amount": 2,
+          "condition": "徒手战斗",
+          "weaponKind": "unarmed"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-31",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "坚韧",
+      "category": "仆人",
+      "description": "每次游戏一次，你可以在任何一次检定中无视状态带来的惩罚。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreConditions",
+          "activation": "manual",
+          "target": "any",
+          "conditionType": "relevant",
+          "condition": "任何一次检定",
+          "uses": {
+            "count": 1,
+            "period": "session"
+          }
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-32",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "流浪者戏法",
+      "category": "流浪者",
+      "description": "当你试图在富人面前隐藏自己或某个物品时，隐秘行动检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "隐秘行动",
+          "amount": 2,
+          "condition": "在富人面前隐藏自己或物品"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-34",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "疑心",
+      "category": "流浪者",
+      "description": "进行警觉检定时无视状态的影响。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreConditions",
+          "activation": "always",
+          "target": "警觉",
+          "conditionType": "relevant",
+          "condition": "对应技能检定"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-35",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "云游",
+      "category": "流浪者",
+      "description": "每次谜题你都可以进行一个操控人心检定，以创造一个位于该地点的 NPC，或是你曾经见过的人。GM决定在上次见面以来他的变化，以及他现在对你的看法。如果检定失败，他要么对你怀有敌意，要么就是他反过来非常需要你的帮助。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "createNPC",
+          "activation": "manual",
+          "target": "操控人心",
+          "uses": {
+            "count": 1,
+            "period": "mystery"
+          },
+          "condition": "该地点一个 NPC 或曾经见过的人；GM 决定变化与看法；失败可能敌意或需要帮助"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-36",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "自动书写",
+      "category": "作家",
+      "description": "你可以通过启迪检定引导灵体进行自动书写以获得线索。GM 会提供或多或少的模糊线索，对未来的预测，或对敌人想法和经验的瞬间洞察。额外的成功会揭示更多的线索。如果检定失败，GM 会决定你是否要承受某种状态，被附身，或是一种持续 1D6 小时的人格改变（具体由你决定是何种改变）。你可以在每次游戏中使用一次。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "specialAction",
+          "activation": "manual",
+          "target": "启迪",
+          "uses": {
+            "count": 1,
+            "period": "session"
+          },
+          "condition": "引导灵体自动书写取得线索；额外成功提供更多线索；失败可能状态、附身或 1D6 小时人格改变"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-38",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "记者",
+      "category": "作家",
+      "description": "当你通过吸引或是哄骗他人以获得信息时，你可以使用启迪检定替代操控人心检定。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "replaceSkill",
+          "activation": "manual",
+          "target": "操控人心",
+          "replacement": "启迪",
+          "condition": "吸引或哄骗他人以获得信息"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-39",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "墨客",
+      "category": "作家",
+      "description": "进行启迪检定时无视状态的影响。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreConditions",
+          "activation": "always",
+          "target": "启迪",
+          "conditionType": "relevant",
+          "condition": "对应技能检定"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 57,
+        "printedPage": 53,
+        "anchor": "section-40",
+        "label": "原书 53 / PDF 57"
+      },
+      "warnings": []
+    },
+    {
+      "name": "战场经历",
+      "category": "通用",
+      "description": "治疗肉体重创时，医学检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "医学",
+          "amount": 2,
+          "condition": "治疗肉体重创"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 58,
+        "printedPage": 54,
+        "anchor": "section-42",
+        "label": "原书 54 / PDF 58"
+      },
+      "warnings": []
+    },
+    {
+      "name": "勇敢",
+      "category": "通用",
+      "description": "进行恐惧检定时，+1。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "always",
+          "target": "恐惧",
+          "amount": 1,
+          "condition": "恐惧检定"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 58,
+        "printedPage": 54,
+        "anchor": "section-43",
+        "label": "原书 54 / PDF 58"
+      },
+      "warnings": []
+    },
+    {
+      "name": "近战训练",
+      "category": "通用",
+      "description": "进行格挡时，力量检定或近身战斗检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "力量/近身战斗",
+          "amount": 2,
+          "condition": "格挡"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 58,
+        "printedPage": 54,
+        "anchor": "section-44",
+        "label": "原书 54 / PDF 58"
+      },
+      "warnings": []
+    },
+    {
+      "name": "联络人",
+      "category": "通用",
+      "description": "在每场游戏中，你可以确定自己已经认识了某个NPC，并且你们之间的关系是积极的。如果 GM 认为这会使谜题不再有趣，那么他可以不允许此天赋生效。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "declareContact",
+          "activation": "manual",
+          "uses": {
+            "count": 1,
+            "period": "session"
+          },
+          "condition": "已认识某个 NPC 且关系积极；GM 可因使谜题失去趣味而否决"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 58,
+        "printedPage": 54,
+        "anchor": "section-45",
+        "label": "原书 54 / PDF 58"
+      },
+      "warnings": []
+    },
+    {
+      "name": "怯懦",
+      "category": "通用",
+      "description": "当你在战斗中受伤时，你可以通过一个隐秘行动检定来使其他玩家角色代替你承受伤害。这并不占用动作。如果检定失败，你必须承受 1 点额外伤害。每场战斗遭遇只能使用一次。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "redirectDamage",
+          "activation": "manual",
+          "target": "隐秘行动",
+          "uses": {
+            "count": 1,
+            "period": "combat"
+          },
+          "failureExtraDamage": 1,
+          "action": "free",
+          "condition": "在战斗中受伤时转由另一名玩家承受；不占用动作"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 58,
+        "printedPage": 54,
+        "anchor": "section-46",
+        "label": "原书 54 / PDF 58"
+      },
+      "warnings": []
+    },
+    {
+      "name": "骗术专精",
+      "category": "通用",
+      "description": "当进行谎言或者欺骗时，操控人心检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "操控人心",
+          "amount": 2,
+          "condition": "谎言或欺骗"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 58,
+        "printedPage": 54,
+        "anchor": "section-47",
+        "label": "原书 54 / PDF 58"
+      },
+      "warnings": []
+    },
+    {
+      "name": "献身",
+      "category": "通用",
+      "description": "每场游戏中，都可以使一个检定无视精神状态的影响。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreConditions",
+          "activation": "manual",
+          "target": "any",
+          "conditionType": "mental",
+          "condition": "一个检定",
+          "uses": {
+            "count": 1,
+            "period": "session"
+          }
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 58,
+        "printedPage": 54,
+        "anchor": "section-48",
+        "label": "原书 54 / PDF 58"
+      },
+      "warnings": []
+    },
+    {
+      "name": "防御专精",
+      "category": "通用",
+      "description": "每一轮你都有一个额外动作，这一动作只能用于闪避或格挡。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "extraDefenseAction",
+          "activation": "always",
+          "amount": 1,
+          "period": "round",
+          "condition": "额外动作只能闪避或格挡"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 58,
+        "printedPage": 54,
+        "anchor": "section-49",
+        "label": "原书 54 / PDF 58"
+      },
+      "warnings": []
+    },
+    {
+      "name": "双手武器专精",
+      "category": "通用",
+      "description": "在近身战斗中使用双武器时，你可以使用额外成功攻击该区域的另一个敌人。如果你使用额外成功来增加伤害，你可以自行选择哪一次攻击获得额外伤害。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "extraTarget",
+          "activation": "manual",
+          "spendExtraSuccesses": 1,
+          "condition": "近身战斗使用双武器；攻击本区域另一个敌人；自行分配额外伤害",
+          "ambiguity": "标题为双手武器专精，正文要求双武器，不能按单件双手武器自动适用。"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-50",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "炸药专家",
+      "category": "通用",
+      "description": "当使用爆炸物进行战斗时，远程战斗检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "远程战斗",
+          "amount": 2,
+          "condition": "使用爆炸物进行战斗"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-51",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "同理心",
+      "category": "通用",
+      "description": "进行观察检定时，忽略状态带来的影响。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreConditions",
+          "activation": "always",
+          "target": "观察",
+          "conditionType": "relevant",
+          "condition": "对应技能检定"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-52",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "逃脱大师",
+      "category": "通用",
+      "description": "在你进行敏捷检定进行逃离时，无视状态的影响。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "ignoreConditions",
+          "activation": "manual",
+          "target": "敏捷",
+          "conditionType": "relevant",
+          "condition": "通过敏捷检定逃离"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-53",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "名望",
+      "category": "通用",
+      "description": "当你试图影响一个听说过你的人时，操控人心检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "操控人心",
+          "amount": 2,
+          "condition": "影响听说过你的人"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-54",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "疾行",
+      "category": "通用",
+      "description": "在战斗中，你在自身区域内移动不会占用动作。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "freeMovement",
+          "activation": "always",
+          "condition": "战斗中在自身区域内移动不占用动作"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-55",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "神圣象征",
+      "category": "通用",
+      "description": "你拥有一个宗教物品，它允许你使用启迪检定攻击自在之物，并造成 1 点伤害。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "specialAttack",
+          "activation": "manual",
+          "target": "启迪",
+          "damage": 1,
+          "condition": "通过拥有的宗教物品攻击自在之物"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-56",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "风驰电掣",
+      "category": "通用",
+      "description": "你拔出武器的行为不占用动作。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "freeDrawWeapon",
+          "activation": "always",
+          "condition": "拔出武器不占用动作"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-57",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "命大",
+      "category": "通用",
+      "description": "当你投重创时，你可以自行决定哪个骰点结果代表十位，哪个骰点结果代表个位。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "criticalDiceOrder",
+          "activation": "manual",
+          "condition": "投重创时自行决定十位与个位的骰子"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-58",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "宠物",
+      "category": "通用",
+      "description": "你拥有一只宠物，在它明显能派上用场的检定中，你可以获得 +1。每场游戏只能使用一次。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "any",
+          "amount": 1,
+          "condition": "宠物明显有用的检定",
+          "uses": {
+            "count": 1,
+            "period": "session"
+          }
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-59",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "拳击手",
+      "category": "通用",
+      "description": "徒手进行战斗时，伤害 +1。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "damageBonus",
+          "activation": "weapon",
+          "amount": 1,
+          "target": "unarmed",
+          "condition": "徒手战斗"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-60",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "人多壮胆",
+      "category": "通用",
+      "description": "当你至少与 2 个玩家角色一起时，恐惧检定 +2。在战斗中，你们必须置身于同一区域该天赋才能生效。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "恐惧",
+          "amount": 2,
+          "condition": "至少与另外 2 个玩家角色一起；战斗中必须同一区域"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-61",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "第六感",
+      "category": "通用",
+      "description": "进行调查检定时，你可以消费一个额外成功，以了解该区域是否存在自在之物、获得自在之物种类的粗略印象，以及发现此处是否有人使用了魔法。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "senseMagic",
+          "activation": "manual",
+          "target": "调查",
+          "spendExtraSuccesses": 1,
+          "condition": "了解区域内自在之物、粗略种类及是否有人使用魔法"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-62",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "短跑选手",
+      "category": "通用",
+      "description": "当你试图赶超或追上某人时，敏捷检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "敏捷",
+          "amount": 2,
+          "condition": "赶超或追上某人"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-63",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "主的牧羊人",
+      "category": "通用",
+      "description": "当你治疗精神重创时，启迪检定 +2。",
+      "verified": true,
+      "repeatable": false,
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "启迪",
+          "amount": 2,
+          "condition": "治疗精神重创"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-64",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "富有",
+      "category": "通用",
+      "description": "资源增加 1 点（本天赋可重复购买）。",
+      "verified": true,
+      "repeatable": true,
+      "effects": [
+        {
+          "type": "resourceBonus",
+          "activation": "always",
+          "amount": 1,
+          "repeatable": true,
+          "condition": "每次购买增加 1 点资源；成长天赋不消费建卡技能预算"
+        }
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "section-65",
+        "label": "原书 55 / PDF 59"
+      },
+      "warnings": []
+    },
+    {
+      "name": "吸血者恨意",
+      "category": "吸血鬼猎人",
+      "verified": false,
+      "repeatable": false,
+      "description": "在面对各类吸血鬼及其子嗣（衍体）时的恐惧检定中获得+2。",
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "manual",
+          "target": "恐惧",
+          "amount": 2,
+          "condition": "面对各类吸血鬼及其子嗣（衍体）",
+          "verified": false
+        }
+      ],
+      "warnings": [
+        "基础规则书没有此天赋；数值与说明仅来自原自动卡。"
+      ],
+      "source": {
+        "document": "vaesen自动卡by拂晓鵺啼 v2.0.xlsx",
+        "sheet": "天赋表",
+        "range": "B32:C32",
+        "markdown": "docs/web-card-workbook.md",
+        "pdfPage": null,
+        "printedPage": null,
+        "label": "Excel 扩展（基础规则书未核验）"
+      }
+    },
+    {
+      "name": "穿刺者",
+      "category": "吸血鬼猎人",
+      "verified": false,
+      "repeatable": false,
+      "description": "使用木桩进行近身战斗检定时获得+2。",
+      "effects": [
+        {
+          "type": "diceBonus",
+          "activation": "weapon",
+          "target": "近身战斗",
+          "amount": 2,
+          "condition": "使用木桩",
+          "weaponName": "木桩",
+          "verified": false
+        }
+      ],
+      "warnings": [
+        "基础规则书没有此天赋；数值与说明仅来自原自动卡。"
+      ],
+      "source": {
+        "document": "vaesen自动卡by拂晓鵺啼 v2.0.xlsx",
+        "sheet": "天赋表",
+        "range": "B33:C33",
+        "markdown": "docs/web-card-workbook.md",
+        "pdfPage": null,
+        "printedPage": null,
+        "label": "Excel 扩展（基础规则书未核验）"
+      }
+    },
+    {
+      "name": "猎杀时刻",
+      "category": "吸血鬼猎人",
+      "verified": false,
+      "repeatable": false,
+      "description": "你得知一个自在之物的藏身地点时，恢复一个状态。",
+      "effects": [
+        {
+          "type": "restoreCondition",
+          "activation": "manual",
+          "amount": 1,
+          "condition": "得知一个自在之物的藏身地点",
+          "verified": false
+        }
+      ],
+      "warnings": [
+        "基础规则书没有此天赋；数值与说明仅来自原自动卡。"
+      ],
+      "source": {
+        "document": "vaesen自动卡by拂晓鵺啼 v2.0.xlsx",
+        "sheet": "天赋表",
+        "range": "B34:C34",
+        "markdown": "docs/web-card-workbook.md",
+        "pdfPage": null,
+        "printedPage": null,
+        "label": "Excel 扩展（基础规则书未核验）"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "value": 1,
+      "name": "赤贫",
+      "description": "赤贫。你的生存完全依赖他人接济，每日都为了三餐而挣扎，而即便你有些财产，也少得可怜。这可能会导致你挨饿、患病或者转而投向药物和酒精。",
+      "exchangeBonus": -1,
+      "assets": 0,
+      "exchangeBonusText": "-1",
+      "assetsText": "-",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 26,
+        "printedPage": 22,
+        "anchor": "pdf-page-26",
+        "label": "原书 22 / PDF 26"
+      },
+      "adjustmentSource": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 77,
+        "printedPage": 73,
+        "anchor": "pdf-page-77",
+        "label": "原书 73 / PDF 77"
+      }
+    },
+    {
+      "value": 2,
+      "name": "贫穷",
+      "description": "贫穷。你的生活非常简陋。你的餐桌上大多数时候都有吃的，但可能难以果腹。如果你有孩子，他们会被迫生活在肮脏的环境中。你可以有一套换洗的衣服和少量财产。对你和你的家庭而言，失去收入总是灾难性的。",
+      "exchangeBonus": 0,
+      "assets": 0,
+      "exchangeBonusText": "-",
+      "assetsText": "-",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 26,
+        "printedPage": 22,
+        "anchor": "pdf-page-26",
+        "label": "原书 22 / PDF 26"
+      },
+      "adjustmentSource": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 77,
+        "printedPage": 73,
+        "anchor": "pdf-page-77",
+        "label": "原书 73 / PDF 77"
+      }
+    },
+    {
+      "value": 3,
+      "name": "挣扎",
+      "description": "挣扎。你有一个简陋的家和固定收入。你没什么积蓄，但可以在特定的场合为家人作打扮，你的孩子也会有受教育的机会——至少在几年之内。",
+      "exchangeBonus": 0,
+      "assets": 1,
+      "exchangeBonusText": "-",
+      "assetsText": "1",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 26,
+        "printedPage": 22,
+        "anchor": "pdf-page-26",
+        "label": "原书 22 / PDF 26"
+      },
+      "adjustmentSource": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 77,
+        "printedPage": 73,
+        "anchor": "pdf-page-77",
+        "label": "原书 73 / PDF 77"
+      }
+    },
+    {
+      "value": 4,
+      "name": "经济稳定",
+      "description": "经济稳定。你有自己的房子和一份收入稳定的工作。有可能你存了些钱，偶尔会犒劳自己一些糖果，一次旅行或是一件精致漂亮的小玩意。在危机时候，总有人愿意借钱给你。",
+      "exchangeBonus": 1,
+      "assets": 2,
+      "exchangeBonusText": "+1",
+      "assetsText": "2",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 26,
+        "printedPage": 22,
+        "anchor": "pdf-page-26",
+        "label": "原书 22 / PDF 26"
+      },
+      "adjustmentSource": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 77,
+        "printedPage": 73,
+        "anchor": "pdf-page-77",
+        "label": "原书 73 / PDF 77"
+      }
+    },
+    {
+      "value": 5,
+      "name": "中产",
+      "description": "中产。你有自己的房子和生意，你可能有 1 个或几个雇员，且知道如何为未来投资。你有存款，也能获得贷款。你和你的家人生活富足。",
+      "exchangeBonus": 1,
+      "assets": 3,
+      "exchangeBonusText": "+1",
+      "assetsText": "3",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 26,
+        "printedPage": 22,
+        "anchor": "pdf-page-26",
+        "label": "原书 22 / PDF 26"
+      },
+      "adjustmentSource": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 77,
+        "printedPage": 73,
+        "anchor": "pdf-page-77",
+        "label": "原书 73 / PDF 77"
+      }
+    },
+    {
+      "value": 6,
+      "name": "小康",
+      "description": "小康。你有一所大房子或是大公寓。你可能有好几个雇员和若干个收入来源。你不会把金钱视为一种稀缺的资源，而是一种增加资本和影响力的筹码。你人缘极佳且很少与穷人打交道。你的家人可以去度假，而你可以负担得起所有最新的发明。",
+      "exchangeBonus": 2,
+      "assets": 5,
+      "exchangeBonusText": "+2",
+      "assetsText": "5",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 26,
+        "printedPage": 22,
+        "anchor": "pdf-page-26",
+        "label": "原书 22 / PDF 26"
+      },
+      "adjustmentSource": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 77,
+        "printedPage": 73,
+        "anchor": "pdf-page-77",
+        "label": "原书 73 / PDF 77"
+      }
+    },
+    {
+      "value": 7,
+      "name": "富有",
+      "description": "富有。你继承了大量的财产与不动产。你拥有多种形式的财产，有许多仆人和多种收入渠道。几乎没有东西是你买不起的。你与城镇甚至国家的精英关系良好，常与高级官员、政客和贵族关系密切。你只能通过车窗看见穷人。",
+      "exchangeBonus": 3,
+      "assets": 8,
+      "exchangeBonusText": "+3",
+      "assetsText": "8",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 26,
+        "printedPage": 22,
+        "anchor": "pdf-page-26",
+        "label": "原书 22 / PDF 26"
+      },
+      "adjustmentSource": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 77,
+        "printedPage": 73,
+        "anchor": "pdf-page-77",
+        "label": "原书 73 / PDF 77"
+      }
+    },
+    {
+      "value": 8,
+      "name": "大富豪",
+      "description": "大富豪。你是这个国家最富有的人之一，和统治者有着直接的关系。你拥有一座甚至好几座城堡或别墅。再大的花销都不是什么问题，你可以尽情放纵自己而无需担心花销。",
+      "exchangeBonus": 5,
+      "assets": 12,
+      "exchangeBonusText": "+5",
+      "assetsText": "12",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 26,
+        "printedPage": 22,
+        "anchor": "pdf-page-26",
+        "label": "原书 22 / PDF 26"
+      },
+      "adjustmentSource": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 77,
+        "printedPage": 73,
+        "anchor": "pdf-page-77",
+        "label": "原书 73 / PDF 77"
+      }
+    }
+  ],
+  "armor": [
+    {
+      "name": "轻甲",
+      "protection": 2,
+      "agility": -1,
+      "availability": 2,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      },
+      "warnings": [
+        "护甲的保护值用于抵消攻击伤害；不能抵消爆炸或坠落伤害。"
+      ]
+    },
+    {
+      "name": "中甲",
+      "protection": 4,
+      "agility": -2,
+      "availability": 3,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      },
+      "warnings": [
+        "护甲的保护值用于抵消攻击伤害；不能抵消爆炸或坠落伤害。"
+      ]
+    },
+    {
+      "name": "重甲",
+      "protection": 6,
+      "agility": -3,
+      "availability": 4,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      },
+      "warnings": [
+        "护甲的保护值用于抵消攻击伤害；不能抵消爆炸或坠落伤害。"
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "name": "拳击或踢击",
+      "kind": "unarmed",
+      "damage": 1,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 0,
+      "availability": null,
+      "skills": [
+        "力量"
+      ],
+      "skill": "力量",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "指虎",
+      "kind": "melee",
+      "damage": 1,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 1,
+      "availability": 2,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "椅子",
+      "kind": "melee",
+      "damage": 1,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 1,
+      "availability": 1,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "长柄锤",
+      "kind": "melee",
+      "damage": 2,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 0,
+      "availability": 2,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "连枷",
+      "kind": "melee",
+      "damage": 2,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 2,
+      "availability": 4,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "来复枪托",
+      "kind": "melee",
+      "damage": 1,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 1,
+      "availability": null,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "小刀或匕首",
+      "kind": "melee",
+      "damage": 1,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 1,
+      "availability": 1,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "刺剑",
+      "kind": "melee",
+      "damage": 1,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 2,
+      "availability": 3,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "剑或军刀",
+      "kind": "melee",
+      "damage": 2,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 2,
+      "availability": 4,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "撬棍",
+      "kind": "melee",
+      "damage": 1,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 1,
+      "availability": 2,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "斧",
+      "kind": "melee",
+      "damage": 2,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 1,
+      "availability": 1,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "铁头木杖",
+      "kind": "melee",
+      "damage": 1,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 1,
+      "availability": 1,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "戟",
+      "kind": "melee",
+      "damage": 3,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 1,
+      "availability": 4,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "刺刀",
+      "kind": "melee",
+      "damage": 2,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 1,
+      "availability": 3,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "鞭子",
+      "kind": "melee",
+      "damage": 1,
+      "range": "0",
+      "rangeMin": 0,
+      "rangeMax": 0,
+      "bonus": 1,
+      "availability": 1,
+      "skills": [
+        "近身战斗"
+      ],
+      "skill": "近身战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "矛",
+      "kind": "ranged",
+      "damage": 1,
+      "range": "0-1",
+      "rangeMin": 0,
+      "rangeMax": 1,
+      "bonus": 1,
+      "availability": 1,
+      "skills": [
+        "近身战斗",
+        "远程战斗"
+      ],
+      "skill": "近身战斗/远程战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": [
+        "矛可按使用方式选择近身战斗或远程战斗检定。"
+      ]
+    },
+    {
+      "name": "弓",
+      "kind": "ranged",
+      "damage": 1,
+      "range": "0-2",
+      "rangeMin": 0,
+      "rangeMax": 2,
+      "bonus": 1,
+      "availability": 1,
+      "skills": [
+        "远程战斗"
+      ],
+      "skill": "远程战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "长弓",
+      "kind": "ranged",
+      "damage": 2,
+      "range": "1-3",
+      "rangeMin": 1,
+      "rangeMax": 3,
+      "bonus": 1,
+      "availability": 2,
+      "skills": [
+        "远程战斗"
+      ],
+      "skill": "远程战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": [
+        "不能攻击同一区域的目标。"
+      ]
+    },
+    {
+      "name": "十字弓",
+      "kind": "ranged",
+      "damage": 2,
+      "range": "0-1",
+      "rangeMin": 0,
+      "rangeMax": 1,
+      "bonus": 1,
+      "availability": 3,
+      "skills": [
+        "远程战斗"
+      ],
+      "skill": "远程战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "手枪或左轮",
+      "kind": "ranged",
+      "damage": 2,
+      "range": "0-1",
+      "rangeMin": 0,
+      "rangeMax": 1,
+      "bonus": 2,
+      "availability": 4,
+      "skills": [
+        "远程战斗"
+      ],
+      "skill": "远程战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": []
+    },
+    {
+      "name": "滑膛枪",
+      "kind": "ranged",
+      "damage": 2,
+      "range": "1-2",
+      "rangeMin": 1,
+      "rangeMax": 2,
+      "bonus": 1,
+      "availability": 3,
+      "skills": [
+        "远程战斗"
+      ],
+      "skill": "远程战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": [
+        "不能攻击同一区域的目标。"
+      ]
+    },
+    {
+      "name": "来复枪",
+      "kind": "ranged",
+      "damage": 2,
+      "range": "1-3",
+      "rangeMin": 1,
+      "rangeMax": 3,
+      "bonus": 2,
+      "availability": 4,
+      "skills": [
+        "远程战斗"
+      ],
+      "skill": "远程战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": [
+        "不能攻击同一区域的目标。"
+      ]
+    },
+    {
+      "name": "加农炮",
+      "kind": "ranged",
+      "damage": 5,
+      "range": "2-5",
+      "rangeMin": 2,
+      "rangeMax": 5,
+      "bonus": 1,
+      "availability": 5,
+      "skills": [
+        "远程战斗"
+      ],
+      "skill": "远程战斗",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 81,
+        "printedPage": 77,
+        "anchor": "pdf-page-81",
+        "label": "原书 77 / PDF 81"
+      },
+      "warnings": [
+        "不能攻击同一区域的目标。"
+      ]
+    }
+  ],
+  "equipment": [
+    {
+      "name": "撬棍",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "使用力量检定破坏锁",
+      "skills": [
+        "力量"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "开锁器",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "使用隐秘行动检定撬锁",
+      "skills": [
+        "隐秘行动"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "观剧镜",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "在远距离使用警觉检定",
+      "skills": [
+        "警觉"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "双筒望远镜",
+      "bonus": 2,
+      "availability": 2,
+      "effect": "在远距离使用警觉检定",
+      "skills": [
+        "警觉"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "狩猎陷阱",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "通过警觉检定发现潜行的人",
+      "skills": [
+        "警觉"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "狩猎装备",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "在野外环境下进行调查检定",
+      "skills": [
+        "调查"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "火绒盒",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "在昏暗环境下进行调查检定",
+      "skills": [
+        "调查"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "马灯",
+      "bonus": 2,
+      "availability": 1,
+      "effect": "在黑暗环境下进行调查检定，以及通过警觉检定发现潜行者",
+      "skills": [
+        "调查",
+        "警觉"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "指南针",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "通过学习检定找到路",
+      "skills": [
+        "学习"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "放大镜",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "使用调查检定寻找线索时",
+      "skills": [
+        "调查"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "照相机",
+      "bonus": 2,
+      "availability": 3,
+      "effect": "通过学习或调查检定获得关于某地区的知识",
+      "skills": [
+        "学习",
+        "调查"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "书写工具及纸张",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "在调查检定中记下便条",
+      "skills": [
+        "调查"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "计算尺",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "通过学习检定计算数值",
+      "skills": [
+        "学习"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "简易绷带",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "医学检定需求此物",
+      "skills": [
+        "医学"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "医疗设备",
+      "bonus": 2,
+      "availability": 2,
+      "effect": "医学检定需求此物",
+      "skills": [
+        "医学"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "乐器",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "通过启迪检定影响听众",
+      "skills": [
+        "启迪"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "乐器（大师工艺）",
+      "bonus": 2,
+      "availability": 3,
+      "effect": "通过启迪检定影响听众",
+      "skills": [
+        "启迪"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "烹饪锅",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "通过启迪检定来烹饪",
+      "skills": [
+        "启迪"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "野外厨房",
+      "bonus": 2,
+      "availability": 2,
+      "effect": "通过启迪检定来烹饪",
+      "skills": [
+        "启迪"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "粗制干粮",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "不需要力量检定，持续数天时间",
+      "skills": [],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "营养食品",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "不需要力量检定，持续许多天时间",
+      "skills": [],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "烈酒",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "以酒精进行启迪检定",
+      "skills": [
+        "启迪"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "好酒",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "通过酒精进行启迪或操控人心检定",
+      "skills": [
+        "启迪",
+        "操控人心"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "化学设备",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "通过调查检定寻找死因",
+      "skills": [
+        "调查"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "便携实验工具",
+      "bonus": 1,
+      "availability": 3,
+      "effect": "通过学习检定制作毒药",
+      "skills": [
+        "学习"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "藏书",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "通过学习检定找到信息",
+      "skills": [
+        "学习"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "老旧的卷轴",
+      "bonus": 2,
+      "availability": 3,
+      "effect": "通过学习检定找到信息",
+      "skills": [
+        "学习"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "水晶球",
+      "bonus": 1,
+      "availability": 3,
+      "effect": "使用观察搜寻线索",
+      "skills": [
+        "观察"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "地图册",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "导航时使用调查检定和学习检定",
+      "skills": [
+        "调查",
+        "学习"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "瘦马",
+      "bonus": 1,
+      "availability": 2,
+      "effect": "用于力量检定",
+      "skills": [
+        "力量"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "骏马",
+      "bonus": 2,
+      "availability": 3,
+      "effect": "使用近身战斗检定和力量检定时",
+      "skills": [
+        "近身战斗",
+        "力量"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "宠物狗",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "运用于近身战斗检定",
+      "skills": [
+        "近身战斗"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "看门狗",
+      "bonus": 2,
+      "availability": 2,
+      "effect": "运用于警觉检定和近身战斗检定",
+      "skills": [
+        "警觉",
+        "近身战斗"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "猎犬",
+      "bonus": 3,
+      "availability": 3,
+      "effect": "运用于警觉、近身战斗和调查检定",
+      "skills": [
+        "警觉",
+        "近身战斗",
+        "调查"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "化妆品",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "有些场合的操控人心检定需要",
+      "skills": [
+        "操控人心"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "伪装物",
+      "bonus": 2,
+      "availability": 2,
+      "effect": "有些场合的操控人心检定需要",
+      "skills": [
+        "操控人心"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "高档伪装物",
+      "bonus": 2,
+      "availability": 3,
+      "effect": "有些场合的操控人心检定需要，以及能用操控人心检定替代隐秘行动。",
+      "skills": [
+        "操控人心"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "绳子",
+      "bonus": 1,
+      "availability": 1,
+      "effect": "使用力量检定进行攀爬",
+      "skills": [
+        "力量"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "绳梯",
+      "bonus": 3,
+      "availability": 2,
+      "effect": "使用力量或敏捷检定进行攀爬",
+      "skills": [
+        "力量",
+        "敏捷"
+      ],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "弱效毒药（剂量3）",
+      "bonus": 0,
+      "availability": 1,
+      "effect": "可用于下毒（毒性3）",
+      "skills": [],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "强效毒药（剂量2）",
+      "bonus": 0,
+      "availability": 2,
+      "effect": "可用于下毒（毒性6）",
+      "skills": [],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    },
+    {
+      "name": "烈性毒药（剂量1）",
+      "bonus": 0,
+      "availability": 3,
+      "effect": "可用于下毒（毒性9）",
+      "skills": [],
+      "activation": "manual",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 79,
+        "printedPage": 75,
+        "anchor": "pdf-page-79",
+        "label": "原书 75 / PDF 79"
+      }
+    }
+  ],
+  "talentAliases": {
+    "人多胆壮": "人多壮胆"
+  },
+  "skillAliases": {
+    "蛮力": "力量"
+  },
+  "skills": [
+    {
+      "name": "敏捷",
+      "attribute": "体能",
+      "conditionType": "physical",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "近身战斗",
+      "attribute": "体能",
+      "conditionType": "physical",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "力量",
+      "attribute": "体能",
+      "conditionType": "physical",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "医学",
+      "attribute": "精准",
+      "conditionType": "physical",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "远程战斗",
+      "attribute": "精准",
+      "conditionType": "physical",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "隐秘行动",
+      "attribute": "精准",
+      "conditionType": "physical",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "调查",
+      "attribute": "逻辑",
+      "conditionType": "mental",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "学习",
+      "attribute": "逻辑",
+      "conditionType": "mental",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "警觉",
+      "attribute": "逻辑",
+      "conditionType": "mental",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "启迪",
+      "attribute": "共情",
+      "conditionType": "mental",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "操控人心",
+      "attribute": "共情",
+      "conditionType": "mental",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    {
+      "name": "观察",
+      "attribute": "共情",
+      "conditionType": "mental",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    }
+  ],
+  "cover": [
+    {
+      "name": "家具",
+      "protection": 3,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "木制门",
+      "protection": 4,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "土包",
+      "protection": 5,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    },
+    {
+      "name": "房屋墙体",
+      "protection": 6,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 78,
+        "printedPage": 74,
+        "anchor": "pdf-page-78",
+        "label": "原书 74 / PDF 78"
+      }
+    }
+  ],
+  "services": [
+    {
+      "name": "助理医生/庸医",
+      "availability": 1,
+      "effect": "治愈崩溃",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "医生",
+      "availability": 2,
+      "effect": "治愈崩溃及一个精神状态",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "私人医生或外科医生",
+      "availability": 3,
+      "effect": "治愈崩溃及两个精神状态",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "洗浴设施",
+      "availability": 1,
+      "effect": "治愈一个精神状态",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "理发师",
+      "availability": 2,
+      "effect": "治愈两个精神状态",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "使童",
+      "availability": 1,
+      "effect": "如果玩家角色通过了操控人心检定，那么允许他在下一个场景呼唤联络人",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "信鸽",
+      "availability": 2,
+      "effect": "允许玩家角色在下一个场景中呼唤联络人",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "驿站邮差",
+      "availability": 3,
+      "effect": "允许玩家角色在下一个场景中呼唤联络人或得到一件足够小的物品",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "马车",
+      "availability": 2,
+      "effect": "前往新地点且治愈一个状态",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "火车或船只",
+      "availability": 3,
+      "effect": "前往新地点且治愈三个状态",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "住宿点或招待所",
+      "availability": 1,
+      "effect": "提供休息或治疗所需的过夜住宿服务",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "高档酒店",
+      "availability": 3,
+      "effect": "提供食物与住宿服务，恢复一个状态",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "简餐",
+      "availability": 1,
+      "effect": "持续几天不需要进行力量检定",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "丰盛的晚餐",
+      "availability": 2,
+      "effect": "持续许多天不需要进行力量检定",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    },
+    {
+      "name": "宴会",
+      "availability": 3,
+      "effect": "持续许多天不需要进行力量检定且治愈一个精神状态",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 80,
+        "printedPage": 76,
+        "anchor": "pdf-page-80",
+        "label": "原书 76 / PDF 80"
+      }
+    }
+  ],
+  "ageGroups": [
+    {
+      "name": "青年",
+      "min": 17,
+      "max": 25,
+      "attributePoints": 15,
+      "skillPoints": 10,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 22,
+        "printedPage": 18,
+        "anchor": "pdf-page-22",
+        "label": "原书 18 / PDF 22"
+      }
+    },
+    {
+      "name": "中年",
+      "min": 26,
+      "max": 50,
+      "attributePoints": 14,
+      "skillPoints": 12,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 22,
+        "printedPage": 18,
+        "anchor": "pdf-page-22",
+        "label": "原书 18 / PDF 22"
+      }
+    },
+    {
+      "name": "老年",
+      "min": 51,
+      "max": null,
+      "attributePoints": 13,
+      "skillPoints": 14,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 22,
+        "printedPage": 18,
+        "anchor": "pdf-page-22",
+        "label": "原书 18 / PDF 22"
+      }
+    }
+  ],
+  "rules": {
+    "creation": {
+      "attributeMin": 2,
+      "attributeMax": 4,
+      "primaryAttributeMax": 5,
+      "skillMin": 0,
+      "skillMax": 2,
+      "primarySkillMax": 3,
+      "initialTalentCount": 1,
+      "initialTalentFromArchetype": true,
+      "resourcePointCost": 1,
+      "resourceIncreaseCostsSkillBudget": true,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 24,
+        "printedPage": 20,
+        "anchor": "pdf-page-24",
+        "label": "原书 20 / PDF 24"
+      },
+      "skillSource": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 25,
+        "printedPage": 21,
+        "anchor": "pdf-page-25",
+        "label": "原书 21 / PDF 25"
+      }
+    },
+    "growth": {
+      "xpCost": 5,
+      "skillIncrease": 1,
+      "skillMax": 5,
+      "canImproveAttributes": false,
+      "anyTalentAllowed": true,
+      "repeatableTalents": [
+        "富有"
+      ],
+      "description": "每 5 XP 可提升一项技能一级或购买一个天赋；基础规则未提供属性提升。",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 29,
+        "printedPage": 25,
+        "anchor": "pdf-page-29",
+        "label": "原书 25 / PDF 29"
+      }
+    },
+    "dice": {
+      "formula": "属性 + 技能 + 装备 + 天赋 + 优势 + 其它调整 - 相关状态",
+      "minimum": 1,
+      "successFace": 6,
+      "talentsStack": true,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/03-skills.md",
+        "pdfPage": 42,
+        "printedPage": 38,
+        "anchor": "pdf-page-42",
+        "label": "原书 38 / PDF 42"
+      }
+    },
+    "conditions": {
+      "physical": [
+        "力竭",
+        "伤痕累累",
+        "创伤"
+      ],
+      "mental": [
+        "愤怒",
+        "恐惧",
+        "绝望"
+      ],
+      "physicalAttributes": [
+        "体能",
+        "精准"
+      ],
+      "mentalAttributes": [
+        "逻辑",
+        "共情"
+      ],
+      "penaltyPerCondition": 1,
+      "brokenAt": 4,
+      "brokenIsActionBlock": true,
+      "brokenIsNotFourthOrdinaryPenalty": true,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/03-skills.md",
+        "pdfPage": 44,
+        "printedPage": 40,
+        "anchor": "pdf-page-44",
+        "label": "原书 40 / PDF 44"
+      }
+    },
+    "fear": {
+      "attributes": [
+        "逻辑",
+        "共情"
+      ],
+      "maxCompanionBonus": 3,
+      "companionsMustShareZoneInCombat": true,
+      "brokenOrFrightenedCompanionsDoNotHelp": true,
+      "penalty": "精神状态",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 72,
+        "printedPage": 68,
+        "anchor": "pdf-page-72",
+        "label": "原书 68 / PDF 72"
+      }
+    },
+    "advantage": {
+      "bonus": 2,
+      "usesPerSession": 1,
+      "gainedPerMystery": 1,
+      "expireAtMysteryEnd": true,
+      "nextMysteryRequiresDifferentSkill": true,
+      "declareBeforeRollOrPush": true,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/03-skills.md",
+        "pdfPage": 46,
+        "printedPage": 42,
+        "anchor": "pdf-page-46",
+        "label": "原书 42 / PDF 46"
+      }
+    },
+    "push": {
+      "maxPerAction": 1,
+      "rerollNonSuccessesOnly": true,
+      "keepSixes": true,
+      "newConditionAppliesAfterRoll": true,
+      "physicalForAttributes": [
+        "体能",
+        "精准"
+      ],
+      "mentalForAttributes": [
+        "逻辑",
+        "共情"
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/03-skills.md",
+        "pdfPage": 43,
+        "printedPage": 39,
+        "anchor": "pdf-page-43",
+        "label": "原书 39 / PDF 43"
+      }
+    },
+    "resources": {
+      "exchangeSkill": "操控人心",
+      "assetsCannotBeUsedInOpposedChecks": true,
+      "assetsSpentUntilNextMystery": true,
+      "rollSuccessesCanAddAssets": true,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 77,
+        "printedPage": 73,
+        "anchor": "pdf-page-77",
+        "label": "原书 73 / PDF 77"
+      }
+    },
+    "armor": {
+      "agilityPenaltyWhenEquipped": true,
+      "eachSuccessReducesDamage": 1,
+      "doesNotProtectAgainst": [
+        "爆炸",
+        "坠落"
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/05-conflict-and-injuries.md",
+        "pdfPage": 77,
+        "printedPage": 73,
+        "anchor": "pdf-page-77",
+        "label": "原书 73 / PDF 77"
+      }
+    },
+    "memento": {
+      "restoresConditions": 1,
+      "requiresGMApproval": true,
+      "repairXpCost": 1,
+      "replaceAfterFullMysteryWithoutMemento": true,
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 26,
+        "printedPage": 22,
+        "anchor": "pdf-page-26",
+        "label": "原书 22 / PDF 26"
+      }
+    },
+    "xpQuestions": {
+      "pointsPerYes": 1,
+      "questions": [
+        "你参与了本次游戏吗？（角色总是至少能获得这一点经验）",
+        "你是否和自在之物对峙过？",
+        "你是否辨别了一种以前不了解的自在之物？",
+        "你的黑暗秘密是否影响了你？",
+        "你是否为了保护他人而犯险？",
+        "你是否学会了什么（是什么呢）？",
+        "你是否开发了自己的大本营？",
+        "你是否做出了非凡的行动？"
+      ],
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 29,
+        "printedPage": 25,
+        "anchor": "pdf-page-29",
+        "label": "原书 25 / PDF 29"
+      }
+    }
+  },
+  "warnings": [
+    {
+      "code": "priest-resource-cap",
+      "message": "牧师建卡资源上限据基础规则书修正为 6；Excel 为 5。",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 35,
+        "printedPage": 31,
+        "anchor": "pdf-page-35",
+        "label": "原书 31 / PDF 35"
+      }
+    },
+    {
+      "code": "strength-label",
+      "message": "仆人的主技能使用基础规则书术语力量；Excel 辅助表写为蛮力。",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 37,
+        "printedPage": 33,
+        "anchor": "pdf-page-37",
+        "label": "原书 33 / PDF 37"
+      }
+    },
+    {
+      "code": "starting-equipment",
+      "message": "初始装备按规则书原文提供；学者和流浪者的液体修正为烈酒，并统一开锁器、火绒盒等术语。",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/02-player-characters.md",
+        "pdfPage": 30,
+        "printedPage": 26,
+        "anchor": "pdf-page-30",
+        "label": "原书 26 / PDF 30"
+      }
+    },
+    {
+      "code": "emergency-medicine-ambiguity",
+      "message": "应急医学存在原文精神状态与医学所属属性矛盾；本地译注明确说明官方没有勘误，不把译者建议当成官方勘误。",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 54,
+        "printedPage": 50,
+        "anchor": "pdf-page-54",
+        "label": "原书 50 / PDF 54"
+      }
+    },
+    {
+      "code": "dual-weapon-title",
+      "message": "双手武器专精的正文写使用双武器；应用时按正文条件，由玩家确认。",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 59,
+        "printedPage": 55,
+        "anchor": "pdf-page-59",
+        "label": "原书 55 / PDF 59"
+      }
+    },
+    {
+      "code": "vampire-hunter-extension",
+      "message": "吸血鬼猎人范型及三个天赋沿用 Excel 扩展；未被本地基础规则书核验。",
+      "source": {
+        "document": "vaesen自动卡by拂晓鵺啼 v2.0.xlsx",
+        "sheet": "辅助表",
+        "range": "A12:I12",
+        "markdown": "docs/web-card-workbook.md",
+        "pdfPage": null,
+        "printedPage": null,
+        "label": "Excel 扩展（基础规则书未核验）"
+      }
+    },
+    {
+      "code": "talent-activation",
+      "message": "天赋的情境奖励、替代技能、次数限制和 GM 裁定均需在检定时确认；不能永久增加技能值或自动恢复状态。",
+      "source": {
+        "document": "北欧奇谭规则书.pdf",
+        "markdown": "docs/rulebook/04-talents.md",
+        "pdfPage": 53,
+        "printedPage": 49,
+        "anchor": "pdf-page-53",
+        "label": "原书 49 / PDF 53"
+      }
+    }
+  ],
+  "effectActivation": {
+    "always": "拥有天赋且当前对应检定/规则适用时自动生效；不改写基础技能值。",
+    "weapon": "仅选择并使用满足条件的武器/徒手攻击时生效。",
+    "manual": "需要玩家选择适用情境、动作或确认次数与 GM 裁定。"
+  }
+}
