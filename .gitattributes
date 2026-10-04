@@ -1,0 +1,4 @@
+# Preserve binary source documents and image assets.
+*.pdf binary
+*.xlsx binary
+*.png binary

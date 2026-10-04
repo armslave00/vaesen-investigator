@@ -1,0 +1,122 @@
+{
+  "source": "raw-docs/北欧奇谭规则书.pdf",
+  "sha256": "80ddb5f99814a98b4d0ccd94e07cacfea61a53ada96238cbf72f4a322e8a63dd",
+  "pdf_pages": 240,
+  "chapters": [
+    {
+      "file": "docs/rulebook/01-introduction.md",
+      "title": "导言",
+      "pdf_pages": [
+        8,
+        19
+      ]
+    },
+    {
+      "file": "docs/rulebook/02-player-characters.md",
+      "title": "玩家角色",
+      "pdf_pages": [
+        20,
+        39
+      ]
+    },
+    {
+      "file": "docs/rulebook/03-skills.md",
+      "title": "技能",
+      "pdf_pages": [
+        40,
+        51
+      ]
+    },
+    {
+      "file": "docs/rulebook/04-talents.md",
+      "title": "天赋",
+      "pdf_pages": [
+        52,
+        59
+      ]
+    },
+    {
+      "file": "docs/rulebook/05-conflict-and-injuries.md",
+      "title": "冲突与受伤",
+      "pdf_pages": [
+        60,
+        81
+      ]
+    },
+    {
+      "file": "docs/rulebook/06-society-and-headquarters.md",
+      "title": "结社与大本营",
+      "pdf_pages": [
+        82,
+        99
+      ]
+    },
+    {
+      "file": "docs/rulebook/07-mythic-north-and-upsala.md",
+      "title": "神秘的北欧和乌普萨拉",
+      "pdf_pages": [
+        100,
+        113
+      ]
+    },
+    {
+      "file": "docs/rulebook/08-vaesen.md",
+      "title": "自在之物",
+      "pdf_pages": [
+        114,
+        173
+      ]
+    },
+    {
+      "file": "docs/rulebook/09-mysteries.md",
+      "title": "谜题",
+      "pdf_pages": [
+        174,
+        199
+      ]
+    },
+    {
+      "file": "docs/rulebook/10-dance-of-dreams.md",
+      "title": "梦中之舞",
+      "pdf_pages": [
+        200,
+        217
+      ]
+    },
+    {
+      "file": "docs/rulebook/11-background-tables.md",
+      "title": "背景故事表",
+      "pdf_pages": [
+        218,
+        233
+      ]
+    }
+  ],
+  "table_count": 84,
+  "table_data_rows": 700,
+  "sidebar_count": 176,
+  "image_pages": [
+    8,
+    15,
+    20,
+    40,
+    52,
+    60,
+    82,
+    100,
+    103,
+    110,
+    114,
+    174,
+    184,
+    204,
+    234,
+    235
+  ],
+  "blank_decorative_pages": [
+    2,
+    3,
+    4,
+    237
+  ]
+}
